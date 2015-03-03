@@ -1,0 +1,39 @@
+﻿<?xml version = "1.0" encoding="utf-8" standalone="yes" ?>
+<products>
+
+<product>
+<ckat>2</ckat>
+<pid>5</pid>
+<name>Proper use of coming and going</name>
+<type>A</type>
+<paid>0</paid>
+<exm1>Come here. (Towards me)</exm1>
+<exm2>Go towards the window. (Not towards me)</exm2>
+<exm3>Please come to my house this evening. (I will be at home)</exm3>
+<exm4>Please go to my house this evening. (I will not be there,
+but I want you to check that I locked the door.)
+</exm4>
+<exm5>I am going to Fred’s party this evening.
+(Clearly away from the speaker
+</exm5>
+<exm6>Will you come with me?
+ (Come with + a person = accompany
+If you come with me, by the time you get to Fred’s party.
+ I will logically be there!)
+</exm6>
+<exm7>Are you coming to school tomorrow? 
+(I am speaking to you on the telephone from school,
+or: we are both at school.
+</exm7>
+<exm8>Are you coming to school tomorrow?
+ (Are you accompanying me?)
+</exm8>
+<exm9>Are you going to school tomorrow? 
+(I am speaking from a place other than school.)
+</exm9>
+<desc>Generally come is used when the direction is towards where the speaker is, was or will be at a relevant point in time,
+ go when the direction is away from the speaker.
+</desc>
+</product>
+
+</products>
