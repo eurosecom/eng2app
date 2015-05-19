@@ -59,13 +59,55 @@ $vysledek = mysql_query("$sql");
 //echo $sql;
 }
 
-$sql = "SELECT exm5 FROM lessons";
+$sql = "SELECT important FROM lessons";
 $vysledok = mysql_query("$sql");
 if ( !$vysledok )
 {
 
+$sql = "ALTER TABLE lessons ADD exm5 TEXT NOT NULL AFTER exm3";
+$vysledek = mysql_query("$sql");
 $sql = "ALTER TABLE lessons ADD exm4 TEXT NOT NULL AFTER exm3";
 $vysledek = mysql_query("$sql");
+
+
+$sql = "ALTER TABLE lessons ADD exc2_sa1ok DECIMAL(10,0) DEFAULT 0 AFTER konx";
+$vysledek = mysql_query("$sql");
+
+$sql = "ALTER TABLE lessons ADD exc2_sa4x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc2_sa3x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc2_sa2x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc2_sa1x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+
+$sql = "ALTER TABLE lessons ADD exc2_ta2 VARCHAR(180) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc2_ta1 VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+
+
+$sql = "ALTER TABLE lessons ADD exc1_sa1ok DECIMAL(10,0) DEFAULT 0 AFTER konx";
+$vysledek = mysql_query("$sql");
+
+$sql = "ALTER TABLE lessons ADD exc1_sa4x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc1_sa3x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc1_sa2x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc1_sa1x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+
+$sql = "ALTER TABLE lessons ADD exc1_ta2 VARCHAR(180) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc1_ta1 VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+
+$sql = "ALTER TABLE lessons ADD important TEXT NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+
 }
 
 
@@ -73,11 +115,12 @@ $vysledek = mysql_query("$sql");
 $cislo_pid = 1*$_REQUEST['cislo_pid'];
 $type = $_REQUEST['type'];
 $name = $_REQUEST['name'];
-$ckat = 1*$_REQUEST['ckat'];
-$paid = 1*$_REQUEST['paid'];
+$ckat = $_REQUEST['ckat'];
+$paid = $_REQUEST['paid'];
 $desx = $_REQUEST['desx'];
 $exm1 = $_REQUEST['exm1'];
 $exm2 = $_REQUEST['exm2'];
+$important = $_REQUEST['important'];
 
 //hladaj
 if ( $copern == 9000 )
@@ -135,7 +178,7 @@ if ( $copern == 18 )
 $cislo_pid = strip_tags($_REQUEST['cislo_pid']);
 
 $uprtxt = "UPDATE lessons SET ".
-" type='$type', ckat='$ckat', paid='$paid', name='$name', desx='$desx', exm1='$exm1', exm2='$exm2' ".
+" type='$type', ckat='$ckat', paid='$paid', name='$name', desx='$desx', exm1='$exm1', exm2='$exm2', important='$important' ".
 " WHERE pid='$cislo_pid'";
 
 //echo $uprtxt;
@@ -161,6 +204,7 @@ $paid = $riadok->paid;
 $desx = $riadok->desx;
 $exm1 = $riadok->exm1;
 $exm2 = $riadok->exm2;
+$important = $riadok->important;
 
   }
     }
@@ -469,7 +513,7 @@ var vyskawincel = screen.height;
 <?php if ( $copern == 8 ) { ?>
   function ObnovUI()
   {
-   document.formv1.faktkedy.type = '<?php echo "$type";?>';
+   document.formv1.type.value = '<?php echo "$type";?>';
    document.formv1.name.value = '<?php echo "$name";?>';
    document.formv1.ckat.value = '<?php echo "$ckat";?>';
    document.formv1.paid.value = '<?php echo "$paid";?>';
@@ -666,7 +710,7 @@ $sqlico = mysql_query("SELECT pid,ico,ciszml FROM lessons WHERE pid=$prev_oc ");
   <td>
 <?php if ( $copern == 1 ) { ?>
    <div class="bar-btn-form-tool">
-    <img src="../obr/ikony/upbox_blue_icon.png" onclick="Export1FAK();" title="Export faktúr za <?php echo $kli_vume; ?>" class="btn-form-tool">
+    <img src="../obr/ikony/upbox_blue_icon.png" onclick="Export1FAK();" title="Export lessons" class="btn-form-tool">
     <img src="../obr/ikony/printer_blue_icon.png" onclick="Tlac1PDF();" title="Zobrazi zoznam za <?php echo $kli_vume; ?> v PDF" class="btn-form-tool">
    </div>
 <?php                     } ?>
@@ -733,7 +777,7 @@ $cpol = mysql_num_rows($sql);
  </div>
  <div class="newico-bar">
   <input type="text" name="h_icn" id="h_icn" maxlength="10"/>
-  <a href="#" onclick="NewIco();" title="Vytvori nové IÈO" >+ IÈO</a>
+  <a href="#" onclick="NewIco();" title="Vytvori novú lesson" >+NEW</a>
  </div>
 </FORM>
 
@@ -770,7 +814,7 @@ if ( $par == 1 ) { $stripe="stripe-light"; }
 <tr class="<?php echo $stripe; ?>">
  <td class="poradove"><?php echo "$riadok->pid.";?></td>
  <td><?php echo $riadok->type;?></td>
- <td style="text-transform:uppercase; text-align:left;"><?php echo $riadok->name;?></td>
+ <td style="text-align:left;"><?php echo $riadok->name;?></td>
  <td><?php echo "$riadok->ckat";?></td>
  <td><?php echo $riadok->paid;?></td>
  <td>
@@ -856,14 +900,12 @@ $sql = mysql_query("$sqlttt");
 if ( $copern == 5 OR $copern == 8 )
      {
 ?>
-<a href="#" onclick="ZoznamFak();" title="Zoznam faktúr za vybrané IÈO" class="faktury-btn">Faktúry</a>
-<FORM name="formv1" method="post" action="lessons.php?sys=<?php echo $sys; ?>&druhzoznamu=<?php echo $druhzoznamu; ?>&hladanie=<?php echo $hladanie; ?>
-&h_hladaj=<?php echo $h_hladaj; ?>&page=<?php echo $page;?>&copern=18&cislo_pid=<?php echo $cislo_pid;?>" >
 
 <div id="col-left"> <!-- lavy stlpec -->
 <div class="head-zakaznik"> </div>
 <div class="wrap-zakaznik">
  <table class="zakaznik">
+ <FORM name="formv1" method="post" action="lessons.php?sys=<?php echo $sys; ?>&page=<?php echo $page;?>&copern=18&druhzoznamu=<?php echo $druhzoznamu; ?>&cislo_pid=<?php echo $cislo_pid;?>&cislo_cis=<?php echo $cislo_cis;?>&cislo_cen=<?php echo $cislo_cen;?>">
 
  <tr>
  	<th>pid</th>
@@ -916,8 +958,14 @@ if ( $copern == 5 OR $copern == 8 )
  </tr>
 
  <tr>
+  <th>paid</th>
   <td>
-   paid <input type="text" name="paid" id="paid" value="<?php echo $paid; ?>" style="width:200px;"/>
+   <select size="1" name="paid" id="paid" style="width:74px;">
+    <option value="0">free</option>
+    <option value="1">paid 1</option>
+    <option value="2">paid 2</option>
+    <option value="3">paid 3</option>
+   </select>
   </td>
  </tr>
  </table>
@@ -945,6 +993,10 @@ if ( $copern == 5 OR $copern == 8 )
  <tr>
   <th width="30%">exm2</th>
   <td width="70%"><textarea name="exm2" id="exm2" style="width:98%; height:120px; margin-top:5px;"><?php echo $exm2; ?></textarea></td>
+ </tr>
+ <tr>
+  <th width="30%">important</th>
+  <td width="70%"><textarea name="important" id="important" style="width:98%; height:120px; margin-top:5px;"><?php echo $important; ?></textarea></td>
  </tr>
  </table>
 </div>
