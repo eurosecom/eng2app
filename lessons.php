@@ -955,6 +955,10 @@ if ( $copern == 5 OR $copern == 8 )
   <td>
    name <input type="text" name="name" id="name" value="<?php echo $name; ?>" style="width:400px;"/>
   </td>
+ <tr>
+  <td>
+   name Sk <input type="text" name="name_sk" id="name_sk" value="<?php echo $name_sk; ?>" style="width:400px;"/>
+  </td>
  </tr>
 
  <tr>
