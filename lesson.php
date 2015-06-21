@@ -1,10 +1,144 @@
+<?php
+//tymto sa spusta ponuka z ciselnika sluzieb
+session_start(); 
+$h5rtgh5 = include("tr45efgsf.php");
+?>
 <!doctype html>
 <html>
 <head>
 <?php
+require_once("../pswd/password.php");
+@$spojeni = mysql_connect($mysqlhost, $mysqluser, $mysqlpasswd);
+  if (!$spojeni):
+    echo "Spojenie so serverom nedostupne.";
+    exit;
+  endif;
+  mysql_select_db($mysqldb);
+
+
 //cislo operacie
 $copern = 1*$_REQUEST['copern'];
 if ( $copern == 0 ) $copern = 1;
+
+
+//cislo operacie
+$cislo_pid = 1*$_REQUEST['cislo_pid'];
+$type = $_REQUEST['type'];
+$name = $_REQUEST['name'];
+$ckat = $_REQUEST['ckat'];
+$paid = $_REQUEST['paid'];
+$desx = $_REQUEST['desx'];
+$exm1 = $_REQUEST['exm1'];
+$exm2 = $_REQUEST['exm2'];
+$exm3 = $_REQUEST['exm3'];
+$exm4 = $_REQUEST['exm4'];
+$important = $_REQUEST['important'];
+
+$exc1_sa1ok = $_REQUEST['exc1_sa1ok'];
+$exc1_sb1ok = $_REQUEST['exc1_sb1ok'];
+
+$exc1_sa4x = $_REQUEST['exc1_sa4x'];
+$exc1_sa3x = $_REQUEST['exc1_sa3x'];
+$exc1_sa2x = $_REQUEST['exc1_sa2x'];
+$exc1_sa1x = $_REQUEST['exc1_sa1x'];
+
+$exc1_sb4x = $_REQUEST['exc1_sb4x'];
+$exc1_sb3x = $_REQUEST['exc1_sb3x'];
+$exc1_sb2x = $_REQUEST['exc1_sb2x'];
+$exc1_sb1x = $_REQUEST['exc1_sb1x'];
+
+$exc1_ta3 = $_REQUEST['exc1_ta3'];
+$exc1_ta2 = $_REQUEST['exc1_ta2'];
+$exc1_ta1 = $_REQUEST['exc1_ta1'];
+
+//uprava 18
+if ( $copern == 18 )
+  {
+$cislo_pid = strip_tags($_REQUEST['cislo_pid']);
+$copernx = 1*$_REQUEST['copernx'];
+
+$uprtxt = "UPDATE lessons SET ".
+" type='$type', ckat='$ckat', paid='$paid', name='$name', desx='$desx', important='$important' ".
+" WHERE pid='$cislo_pid'";
+
+//echo $uprtxt;
+$upravene = mysql_query("$uprtxt");
+
+if( $copernx == 21 ) {
+
+$uprtxt = "UPDATE lessons SET ".
+" exc1_sa1ok='$exc1_sa1ok', exc1_sb1ok='$exc1_sb1ok', ".
+" exc1_sa4x='$exc1_sa4x', exc1_sa3x='$exc1_sa3x', exc1_sa2x='$exc1_sa2x', exc1_sa1x='$exc1_sa1x', ".
+" exc1_sb4x='$exc1_sb4x', exc1_sb3x='$exc1_sb3x', exc1_sb2x='$exc1_sb2x', exc1_sb1x='$exc1_sb1x', ".
+" exc1_ta3='$exc1_ta3', exc1_ta2='$exc1_ta2', exc1_ta1='$exc1_ta1' ".
+" WHERE pid='$cislo_pid'";
+
+//echo $uprtxt;
+$upravene = mysql_query("$uprtxt");
+
+                    }
+
+if( $copernx == 1 ){
+
+$uprtxt = "UPDATE lessons SET ".
+" exm1='$exm1', exm2='$exm2', exm3='$exm3', exm4='$exm4' ".
+" WHERE pid='$cislo_pid'";
+
+//echo $uprtxt;
+$upravene = mysql_query("$uprtxt");
+
+                    }
+
+$copern=$copernx;
+  }
+
+//nacitanie 
+if ( $copern >= 1 )
+    {
+
+$sqltt = "SELECT * FROM lessons WHERE pid = $cislo_pid ";
+$sql = mysql_query("$sqltt"); 
+  if (@$zaznam=mysql_data_seek($sql,0))
+  {
+  $riadok=mysql_fetch_object($sql);
+
+$type = $riadok->type;
+$name = $riadok->name;
+$ckat = $riadok->ckat;
+$paid = $riadok->paid;
+$desx = $riadok->desx;
+$exm1 = $riadok->exm1;
+$exm2 = $riadok->exm2;
+$exm3 = $riadok->exm3;
+$exm4 = $riadok->exm4;
+$important = $riadok->important;
+
+$exc1_sa1ok = $riadok->exc1_sa1ok;
+$exc1_sb1ok = $riadok->exc1_sb1ok;
+
+$exc1_sa4x = $riadok->exc1_sa4x;
+$exc1_sa3x = $riadok->exc1_sa3x;
+$exc1_sa2x = $riadok->exc1_sa2x;
+$exc1_sa1x = $riadok->exc1_sa1x;
+
+$exc1_sb4x = $riadok->exc1_sb4x;
+$exc1_sb3x = $riadok->exc1_sb3x;
+$exc1_sb2x = $riadok->exc1_sb2x;
+$exc1_sb1x = $riadok->exc1_sb1x;
+
+$exc1_ta3 = $riadok->exc1_ta3;
+$exc1_ta2 = $riadok->exc1_ta2;
+$exc1_ta1 = $riadok->exc1_ta1;
+
+  }
+    }
+//koniec nacitanie
+
+$uloz="NO";
+$zmaz="NO";
+$uprav="NO";
+
+
 ?>
  <meta charset="cp1250">
  <link rel="stylesheet" href="../css/global.css">
@@ -167,8 +301,62 @@ a.active {
 
 
 </style>
+<script type="text/javascript">
+//sirka a vyska okna
+var sirkawin = screen.width-10;
+var vyskawin = screen.height-175;
+var sirkawin = screen.width-10;
+var vyskawincel = screen.height;
+
+//uprava
+<?php if ( $copern >= 1 ) { ?>
+  function ObnovUI()
+  {
+   document.formv1.type.value = '<?php echo "$type";?>';
+   document.formv1.name.value = '<?php echo "$name";?>';
+   document.formv1.ckat.value = '<?php echo "$ckat";?>';
+   document.formv1.paid.value = '<?php echo "$paid";?>';
+
+
+
+  }
+<?php                     } ?>
+
+
+
+  function Povol_uloz()
+  {
+  }
+
+//preskakovanie ENTER-om
+  function ucezmlEnter(e)
+  {
+   var k = (navigator.appName=="Netscape") ? e : event.keyCode;
+   if ( k == 13 ){
+        document.forms.formv1.strzml.focus();
+        document.forms.formv1.strzml.select();
+                 }
+  }
+  function strzmlEnter(e)
+  {
+   var k = (navigator.appName=="Netscape") ? e : event.keyCode;
+   if ( k == 13 ){
+        document.forms.formv1.faktkedy.focus();
+        document.forms.formv1.taktako.select();
+                 }
+  }
+
+
+
+//Z ciarky na bodku
+  function CiarkaNaBodku(Vstup)
+  {
+   if ( Vstup.value.search(/[^0-9.-]/g) != -1 ) { Vstup.value=Vstup.value.replace(",","."); }
+  }
+
+</script>
 </head>
-<body>
+<body onload="ObnovUI();">
 
 <!-- horna lista -->
 <div class="top-bar">
@@ -177,7 +365,7 @@ a.active {
   <a href="#" onclick="();" title="Prejsù na" class="toleft">English2App</a>
  </dt>
  <dd></dd>
- <dt class="toleft" style="font-size:14px;">lesson 1</dt>
+ <dt class="toleft" style="font-size:14px;">lesson <?php echo $cislo_pid;?></dt>
 </dl>
 <a href="#" onclick="();" title="Sp‰ù na zoznam" class="x24-icon-arrow58back">sp‰ù</a>
 
@@ -190,12 +378,12 @@ a.active {
 <!-- telo stranky -->
 <div class="wrap-content" style="width:100%;">
 <div class="content">
-<FORM>
+<FORM name="formv1" method="post" action="lesson.php?copern=18&cislo_pid=<?php echo $cislo_pid;?>&copernx=<?php echo $copern;?>">
 <div class="wrap-content-col col-english">
 <div class="content-col">
 <h1>
  <label for="name" style="">Name</label>
- <input type="text" name="name" id="name" value="<?php echo $name; ?>"/>
+ <input type="text" name="name" id="name" />
 </h1>
 
 <fieldset>
@@ -223,7 +411,7 @@ a.active {
   <option value="3">paid 3</option>
  </select>
 <p >
- <label for="desx" style="margin-bottom:3px;">Desc</label>
+ <label for="desx" style="margin-bottom:3px;">Rule</label>
  <textarea name="desx" id="desx" style="width:500px;"><?php echo $desx; ?></textarea>
 </p>
 </fieldset>
@@ -233,11 +421,11 @@ a.active {
 <legend>
 <?php if ( $copern == 1 ) { ?>
  <h4 class="toleft" style="">Example</h4>
- <a href="#" onclick="window.open('../eng2app/lesson.php?copern=2', '_self');"
+ <a href="#" onclick="window.open('../eng2app/lesson.php?copern=21&cislo_pid=<?php echo $cislo_pid; ?>', '_self');"
   class="toleft" style="">Exercise</a>
 <?php                     } ?>
 <?php if ( $copern == 2 OR $copern == 21 OR $copern == 22 OR $copern == 23 OR $copern == 24 ) { ?>
- <a href="#" onclick="window.open('../eng2app/lesson.php?copern=1', '_self');"
+ <a href="#" onclick="window.open('../eng2app/lesson.php?copern=1&cislo_pid=<?php echo $cislo_pid; ?>', '_self');"
    class="toleft" style="">Example</a>
  <h4 class="toleft">Exercise</h4>
  <div class="section-nav toright">
@@ -246,13 +434,13 @@ $clas1="noactive"; $clas2="noactive"; $clas3="noactive"; $clas4="noactive";
 if ( $copern == 21 OR $copern == 2 ) $clas1="active"; if ( $copern == 22 ) $clas2="active";
 if ( $copern == 23 ) $clas3="active"; if ( $copern == 24 ) $clas4="active";
 ?>
-  <a href="#" onclick="window.open('../eng2app/lesson.php?copern=21', '_self');"
+  <a href="#" onclick="window.open('../eng2app/lesson.php?copern=21&cislo_pid=<?php echo $cislo_pid; ?>', '_self');"
      class="<?php echo $clas1; ?>">a.</a>
-  <a href="#" onclick="window.open('../eng2app/lesson.php?copern=22', '_self');"
+  <a href="#" onclick="window.open('../eng2app/lesson.php?copern=22&cislo_pid=<?php echo $cislo_pid; ?>', '_self');"
      class="<?php echo $clas2; ?>">b.</a>
-  <a href="#" onclick="window.open('../eng2app/lesson.php?copern=23', '_self');"
+  <a href="#" onclick="window.open('../eng2app/lesson.php?copern=23&cislo_pid=<?php echo $cislo_pid; ?>', '_self');"
      class="<?php echo $clas3; ?>">c.</a>
-  <a href="#" onclick="window.open('../eng2app/lesson.php?copern=24', '_self');"
+  <a href="#" onclick="window.open('../eng2app/lesson.php?copern=24&cislo_pid=<?php echo $cislo_pid; ?>', '_self');"
      class="<?php echo $clas4; ?>">d.</a>
  </div>
 <?php                     } ?>
@@ -278,39 +466,38 @@ if ( $copern == 23 ) $clas3="active"; if ( $copern == 24 ) $clas4="active";
 <?php                     } ?>
 
 
+
 <?php if ( $copern == 2 OR $copern == 21 OR $copern == 22 OR $copern == 23 OR $copern == 24 ) { ?>
 <p>
- <input type="text" name="" id="" value="" placeholder="" style="width:200px;"/>
+ <input type="text" name="exc1_ta1" id="exc1_ta1" value="<?php echo $exc1_ta1; ?>" placeholder="" style="width:200px;"/>
 </p>
 <p>
-   <input type="text" name="" id="" value="" placeholder="" style="width:120px;"/>
+   <input type="text" name="exc1_sa1x" id="exc1_sa1x" value="<?php echo $exc1_sa1x; ?>" placeholder="" style="width:120px;"/>
    <input type="checkbox" name="" value="1">
-   <input type="text" name="" id="" value="" placeholder="" style="width:120px;"/>
+   <input type="text" name="exc1_sa2x" id="exc1_sa2x" value="<?php echo $exc1_sa2x; ?>" placeholder="" style="width:120px;"/>
    <input type="checkbox" name="" value="1">
-   <input type="text" name="" id="" value="" placeholder="" style="width:120px;"/>
+   <input type="text" name="exc1_sa3x" id="exc1_sa3x" value="<?php echo $exc1_sa3x; ?>" placeholder="" style="width:120px;"/>
    <input type="checkbox" name="" value="1">
-   <input type="text" name="" id="" value="" placeholder="" style="width:120px;"/>
-   <input type="checkbox" name="" value="1">
-</p>
-<p>
- <input type="text" name="" id="" value="" placeholder="" style="width:200px;"/>
-</p>
-<p>
-   <input type="text" name="" id="" value="" placeholder="" style="width:120px;"/>
-   <input type="checkbox" name="" value="1">
-   <input type="text" name="" id="" value="" placeholder="" style="width:120px;"/>
-   <input type="checkbox" name="" value="1">
-   <input type="text" name="" id="" value="" placeholder="" style="width:120px;"/>
-   <input type="checkbox" name="" value="1">
-   <input type="text" name="" id="" value="" placeholder="" style="width:120px;"/>
+   <input type="text" name="exc1_sa4x" id="exc1_sa4x" value="<?php echo $exc1_sa4x; ?>" placeholder="" style="width:120px;"/>
    <input type="checkbox" name="" value="1">
 </p>
 <p>
- <input type="text" name="" id="" value="" placeholder="" style="width:200px;"/>
+ <input type="text" name="exc1_ta2" id="exc1_ta2" value="<?php echo $exc1_ta2; ?>" placeholder="" style="width:200px;"/>
 </p>
 <p>
- <input type="text" name="" id="" value="" placeholder="" style="width:200px;"/>
+   <input type="text" name="exc1_sb1x" id="exc1_sb1x" value="<?php echo $exc1_sb1x; ?>" placeholder="" style="width:120px;"/>
+   <input type="checkbox" name="" value="1">
+   <input type="text" name="exc1_sb2x" id="exc1_sb2x" value="<?php echo $exc1_sb2x; ?>" placeholder="" style="width:120px;"/>
+   <input type="checkbox" name="" value="1">
+   <input type="text" name="exc1_sb3x" id="exc1_sb3x" value="<?php echo $exc1_sb3x; ?>" placeholder="" style="width:120px;"/>
+   <input type="checkbox" name="" value="1">
+   <input type="text" name="exc1_sb4x" id="exc1_sb4x" value="<?php echo $exc1_sb4x; ?>" placeholder="" style="width:120px;"/>
+   <input type="checkbox" name="" value="1">
 </p>
+<p>
+ <input type="text" name="exc1_ta3" id="exc1_ta3" value="<?php echo $exc1_ta3; ?>" placeholder="" style="width:200px;"/>
+</p>
+
 <?php                                                                         } ?>
 </fieldset>
 
@@ -323,7 +510,7 @@ if ( $copern == 23 ) $clas3="active"; if ( $copern == 24 ) $clas4="active";
 
 <div style="position:fixed; bottom: 10px; left:45%;">
 <button type="submit" title="Save form">Save</button>
-<a href="#">NoSave</a>
+<a href="lessons.php?copern=1">NoSave</a>
 </div>
 
 

@@ -1,12 +1,51 @@
 ﻿<?xml version = "1.0" encoding="utf-8" standalone="yes" ?>
 <products>
-
+<product>
+<ckat>1</ckat>
+<pid>1</pid>
+<name>Airport</name>
+<type>A</type><paid>0</paid>
+<dph>20</dph>
+<cep>1.17</cep>
+<price>1.40</price>
+<ean>5850000000001</ean>
+<pidm>1</pidm>
+<pidp>14</pidp>
+<pidn>3</pidn>
+</product>
+<product>
+<ckat>1</ckat>
+<pid>3</pid>
+<name>Hotel</name>
+<type>A</type><paid>1</paid>
+<dph>20</dph>
+<cep>1.25</cep>
+<price>1.50</price>
+<ean>5850000000003</ean>
+<pidm>1</pidm>
+<pidp>1</pidp>
+<pidn>4</pidn>
+<desc>some memo</desc>
+</product>
+<product>
+<ckat>1</ckat>
+<pid>4</pid>
+<name>Traveling</name>
+<type>A</type><paid>1</paid>
+<dph>20</dph>
+<cep>1.33</cep>
+<price>1.60</price>
+<ean>5850000000004</ean>
+<pidm>1</pidm>
+<pidp>3</pidp>
+<pidn>9</pidn>
+<desc>very good coffee</desc>
+</product>
 <product>
 <ckat>2</ckat>
 <pid>5</pid>
 <name>Proper use of coming and going</name>
-<type>A</type>
-<paid>0</paid>
+<type>A</type><paid>0</paid>
 <exm1>Come here. (Towards me)</exm1>
 <exm2>Go towards the window. (Not towards me)</exm2>
 <exm3>Please come to my house this evening. (I will be at home)</exm3>
@@ -34,6 +73,136 @@ or: we are both at school.
 <desc>Generally come is used when the direction is towards where the speaker is, was or will be at a relevant point in time,
  go when the direction is away from the speaker.
 </desc>
+<exc1_ta1>Please</exc1_ta1>
+<exc1_sa1>come</exc1_sa1>
+<exc1_sa2>coming</exc1_sa2>
+<exc1_sa3>go</exc1_sa3>
+<exc1_sa4>going</exc1_sa4>
+<exc1_sa1ok>1</exc1_sa1ok>
+<exc1_ta2>to my house this evening. (I will be at home)</exc1_ta2>
+<exc2_ta1>Please</exc2_ta1>
+<exc2_sa1>going</exc2_sa1>
+<exc2_sa2>coming</exc2_sa2>
+<exc2_sa3>go</exc2_sa3>
+<exc2_sa4>come</exc2_sa4>
+<exc2_sa1ok>3</exc2_sa1ok>
+<exc2_ta2>to my house this evening. (I will not be there,
+but I want you to check that I locked the door.)
+</exc2_ta2>
+<important>
+One important point here is that sometimes there is no correct answer. 
+</important>
 </product>
-
+<product>
+<ckat>1</ckat>
+<pid>9</pid>
+<name>My family</name>
+<type>A</type><paid>0</paid>
+<dph>20</dph>
+<cep>1.33</cep>
+<price>1.60</price>
+<ean>5850000000009</ean>
+<pidm>1</pidm>
+<pidp>4</pidp>
+<pidn>14</pidn>
+<desc>good coffee</desc>
+</product>
+<product>
+<ckat>2</ckat>
+<pid>10</pid>
+<name>Past simple</name>
+<type>A</type><paid>0</paid>
+<dph>20</dph>
+<cep>1.60</cep>
+<price>1.90</price>
+<ean>5850000000010</ean>
+<pidm>5</pidm>
+<pidp>5</pidp>
+<pidn>12</pidn>
+<desc>cold, with or without bubbles</desc>
+</product>
+<product>
+<ckat>2</ckat>
+<pid>12</pid>
+<name>Past continuous</name>
+<type>A</type><paid>0</paid>
+<dph>20</dph>
+<cep>1.67</cep>
+<price>2.00</price>
+<ean>5850000000012</ean>
+<pidm>5</pidm>
+<pidp>10</pidp>
+<pidn>5</pidn>
+<desc>from afrika orange</desc>
+</product>
+<product>
+<ckat>3</ckat>
+<pid>13</pid>
+<name>Agile principles</name>
+<type>A</type><paid>0</paid>
+<dph>20</dph>
+<cep>2.00</cep>
+<price>2.40</price>
+<ean></ean>
+<pidm>13</pidm>
+<pidp>15</pidp>
+<pidn>15</pidn>
+<desc>very very good</desc>
+</product>
+<product>
+<ckat>1</ckat>
+<pid>14</pid>
+<name>At work</name>
+<type>A</type><paid>0</paid>
+<dph>20</dph>
+<cep>1.58</cep>
+<price>1.90</price>
+<ean></ean>
+<pidm>1</pidm>
+<pidp>9</pidp>
+<pidn>1</pidn>
+<desc>with cream</desc>
+</product>
+<product>
+<ckat>3</ckat>
+<pid>15</pid>
+<name>SCRUM agile method</name>
+<type>A</type><paid>0</paid>
+<dph>20</dph>
+<cep>1.67</cep>
+<price>2.00</price>
+<ean></ean>
+<pidm>13</pidm>
+<pidp>13</pidp>
+<pidn>13</pidn>
+<desc>very good and very nice</desc>
+</product>
+<product>
+<ckat>1</ckat>
+<pid>15</pid>
+<name>At restaurant</name>
+<type>A</type><paid>0</paid>
+<dph>20</dph>
+<cep>1.58</cep>
+<price>1.90</price>
+<ean></ean>
+<pidm>1</pidm>
+<pidp>9</pidp>
+<pidn>1</pidn>
+<desc>dsfaaffdfd</desc>
+</product>
+<product>
+<ckat>1</ckat>
+<pid>14</pid>
+<name>Negotiating</name>
+<type>A</type><paid>0</paid>
+<dph>20</dph>
+<cep>1.58</cep>
+<price>1.90</price>
+<ean></ean>
+<pidm>1</pidm>
+<pidp>9</pidp>
+<pidn>1</pidn>
+<desc>with cream</desc>
+</product>
 </products>

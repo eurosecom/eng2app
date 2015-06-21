@@ -59,7 +59,7 @@ $vysledek = mysql_query("$sql");
 //echo $sql;
 }
 
-$sql = "SELECT important FROM lessons";
+$sql = "SELECT exc1_ta3 FROM lessons";
 $vysledok = mysql_query("$sql");
 if ( !$vysledok )
 {
@@ -72,6 +72,8 @@ $vysledek = mysql_query("$sql");
 
 $sql = "ALTER TABLE lessons ADD exc2_sa1ok DECIMAL(10,0) DEFAULT 0 AFTER konx";
 $vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc2_sb1ok DECIMAL(10,0) DEFAULT 0 AFTER konx";
+$vysledek = mysql_query("$sql");
 
 $sql = "ALTER TABLE lessons ADD exc2_sa4x VARCHAR(80) NOT NULL AFTER konx";
 $vysledek = mysql_query("$sql");
@@ -82,13 +84,26 @@ $vysledek = mysql_query("$sql");
 $sql = "ALTER TABLE lessons ADD exc2_sa1x VARCHAR(80) NOT NULL AFTER konx";
 $vysledek = mysql_query("$sql");
 
-$sql = "ALTER TABLE lessons ADD exc2_ta2 VARCHAR(180) NOT NULL AFTER konx";
+$sql = "ALTER TABLE lessons ADD exc2_sb4x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc2_sb3x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc2_sb2x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc2_sb1x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+
+$sql = "ALTER TABLE lessons ADD exc2_ta3 VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc2_ta2 VARCHAR(80) NOT NULL AFTER konx";
 $vysledek = mysql_query("$sql");
 $sql = "ALTER TABLE lessons ADD exc2_ta1 VARCHAR(80) NOT NULL AFTER konx";
 $vysledek = mysql_query("$sql");
 
 
 $sql = "ALTER TABLE lessons ADD exc1_sa1ok DECIMAL(10,0) DEFAULT 0 AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc1_sb1ok DECIMAL(10,0) DEFAULT 0 AFTER konx";
 $vysledek = mysql_query("$sql");
 
 $sql = "ALTER TABLE lessons ADD exc1_sa4x VARCHAR(80) NOT NULL AFTER konx";
@@ -100,7 +115,18 @@ $vysledek = mysql_query("$sql");
 $sql = "ALTER TABLE lessons ADD exc1_sa1x VARCHAR(80) NOT NULL AFTER konx";
 $vysledek = mysql_query("$sql");
 
-$sql = "ALTER TABLE lessons ADD exc1_ta2 VARCHAR(180) NOT NULL AFTER konx";
+$sql = "ALTER TABLE lessons ADD exc1_sb4x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc1_sb3x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc1_sb2x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc1_sb1x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+
+$sql = "ALTER TABLE lessons ADD exc1_ta3 VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc1_ta2 VARCHAR(80) NOT NULL AFTER konx";
 $vysledek = mysql_query("$sql");
 $sql = "ALTER TABLE lessons ADD exc1_ta1 VARCHAR(80) NOT NULL AFTER konx";
 $vysledek = mysql_query("$sql");
@@ -148,8 +174,13 @@ $pid = 1*$riadok->pid;
   }
 
 $cislo_pid=$pid;
-$copern=8;
-
+$copern=1;
+?>
+<script type="text/javascript">
+window.open('lesson.php?copern=1&cislo_pid=<?php echo $cislo_pid; ?>', '_self' );
+</script>
+<?php
+exit;
 }
 //koniec nove 
 
@@ -598,7 +629,7 @@ var vyskawincel = screen.height;
   function UpravZml(pid)
   {
    var pidx = pid;
-   window.open('lessons.php?sys=<?php echo $sys; ?>&copern=8&druhzoznamu=<?php echo $druhzoznamu; ?>&hladanie=<?php echo $hladanie; ?>&h_hladaj=<?php echo $h_hladaj; ?>&page=<?php echo $page;?>&cislo_pid=' + pidx + '&tt=1', '_self');
+   window.open('lesson.php?copern=1&cislo_pid=' + pidx, '_self');
   }
   function ZmazZml(pid)
   {
