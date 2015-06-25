@@ -4,13 +4,13 @@ session_start();
 $h5rtgh5 = include("tr45efgsf.php");
 ?>
 <!doctype html>
-<HTML>
+<html>
 <?php
 //zaciatok dokumentu
   do
   {
 $copern = 1*$_REQUEST['copern'];
-if( $copern == 0 ) { $copern=1; }
+if ( $copern == 0 ) { $copern=1; }
 
 require_once("../pswd/password.php");
 @$spojeni = mysql_connect($mysqlhost, $mysqluser, $mysqlpasswd);
@@ -177,7 +177,7 @@ $cislo_pid=$pid;
 $copern=1;
 ?>
 <script type="text/javascript">
-window.open('lesson.php?copern=1&cislo_pid=<?php echo $cislo_pid; ?>', '_self' );
+ window.open('lesson.php?copern=1&cislo_pid=<?php echo $cislo_pid; ?>', '_self');
 </script>
 <?php
 exit;
@@ -193,7 +193,7 @@ $zmazane = mysql_query("DELETE FROM lessons WHERE pid='$cislo_pid'");
 $copern=1;
 if (!$zmazane):
 ?>
-<script type="text/javascript"> alert( " POLOéKA NEBOLA VYMAZAN¡ " ) </script>
+<script type="text/javascript"> alert( "POLOéKA NEBOLA VYMAZAN¡" ) </script>
 <?php
 endif;
 if ($zmazane):
@@ -215,13 +215,11 @@ $uprtxt = "UPDATE lessons SET ".
 //echo $uprtxt;
 $upravene = mysql_query("$uprtxt");
 $copern=8;
-
   }
 
 //uprava 
 if ( $copern == 8 OR $copern == 88 )
     {
-
 $sqltt = "SELECT * FROM lessons WHERE pid = $cislo_pid ";
 $sql = mysql_query("$sqltt"); 
   if (@$zaznam=mysql_data_seek($sql,0))
@@ -236,7 +234,6 @@ $desx = $riadok->desx;
 $exm1 = $riadok->exm1;
 $exm2 = $riadok->exm2;
 $important = $riadok->important;
-
   }
     }
 //koniec copern=8 nacitanie
@@ -244,218 +241,184 @@ $important = $riadok->important;
 $uloz="NO";
 $zmaz="NO";
 $uprav="NO";
-
-
 ?>
-<HEAD>
-<META http-equiv="Content-Type" content="text/html; charset=cp1250">
-  <link rel="stylesheet" href="../css/reset.css" type="text/css">
-<title>EuroSecom - Lessons</title>
+<head>
+ <meta charset="cp1250">
+ <link rel="stylesheet" href="css/global.css">
+<title>Lessons | English2App</title>
 <style type="text/css">
-a { text-decoration: none; }
-strong { font-weight: bold; }
 body {
-  min-width: 950px;
-  background-color:  #e1f1f6;
-  font-family: Arial, sans-serif;
+  background-color: #eee;
 }
-.f16 { font-size: 16px; }
-.f15 { font-size: 15px; }
-.f14 { font-size: 14px; }
-.f12 { font-size: 12px; }
-.va20 {
-  height: 20px !important;
-  line-height: 20px !important;
-}
-.va16 {
-  height: 16px !important;
-  line-height: 16px !important;
-}
-#wrap-heading {
+div.top-bar {
   overflow: auto;
-  width: 98%;
-  padding: 0 1%;
-  background-color: #ffff90;
-  -webkit-box-shadow: 1px 1px 6px 0px rgba(0, 0, 0, 0.298);
-  -moz-box-shadow: 1px 1px 6px 0px rgba(0, 0, 0, 0.298);
-  box-shadow: 1px 1px 6px 0px rgba(0, 0, 0, 0.298);
+  width: 99%;
+  padding: 0 0.5%;
+  clear: both;
+  height: 32px;
+  background-color: #1976d2;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12); /* prefixy */
 }
-#heading {
-  margin-top: 4px;
-  width: 100%;
+
+dl.breadcrumb-nav > dd {
+  font-size: 16px;
+  float: left;
+  margin-top: 9px;
+  color: #fff;
 }
-td.ilogin { font-size: 11px; }
-td.header {
-  height: 36px;
-  line-height: 36px;
-  font-size: 20px;
-  font-weight: bold;
-  font-family: Times, 'Times New Roman', Georgia, serif;
-}
-td.header > img {
-  width: 15px;
-  height: 15px;
-  vertical-align: middle;
-  cursor: pointer;
-}
-div.bar-btn-form-tool {
-  position: absolute;
-  top: 23px;
-  right: 1%;
-}
-img.btn-form-tool {
-  float: right;
-  width: 20px;
-  height: 20px;
-  margin-left: 10px;
-  cursor: pointer;
-}
-div.content {
-  position: relative;
-  width: 98%;
-  margin: 10px 1% 0 1%;
-}
-div.search-bar {
-  position: absolute;
-  top: 0;
-  right: 5%;
-  left: 5%;
-  width: 300px;
-  margin: 0 auto;
-  padding: 4px;
-  background-color: #add8e6;
-}
-div.search-bar > input {
-  width: 200px;
-  height: 22px;
-  line-height: 22px;
-  border: 1px solid #39f;
-  text-indent: 3px;
-  font-size: 14px;
-}
-div.search-bar > a {
-  margin-left: -4px;
-  padding: 5px 10px;
-  background-color: #39f;
-  color: white;
-  font-size: 13px;
-  font-weight: bold;
-}
-div.search-bar > img {
-  position: absolute;
-  top: 7px;
-  right: 10px;
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-}
-div.newico-bar {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 135px;
-  padding: 4px;
-  font-size: 14px;
-  background-color: #7df16f;
-}
-div.newico-bar > input {
-  width: 80px;
-  height: 22px;
-  line-height: 22px;
-  border: 1px solid #27c513;
-  text-indent: 3px;
-  font-size: 14px;
-}
-div.newico-bar > a {
-  margin-left: -5px;
-  padding: 5px 8px;
-  color: white;
-  font-size: 13px;
-  font-weight: bold;
-  background-color: #27c513;
-}
-table.zakaznici {
-  width: 100%;
-  margin-top: 10px;
-  font-size: 13px;
-}
-table.zakaznici th {
-  height: 16px;
+dl.breadcrumb-nav > dt > a {
+  display: block;
   line-height: 16px;
+  font-size: 14px;
+  color: #fff;
+  padding: 8px 7px 8px 7px;
+}
+dl.breadcrumb-nav > dt > a:hover {
+  background-color: #1565C0;
+  color: #fff;
+}
+
+dl.breadcrumb-nav > dt > strong {
+  display: block;
+  color: #fff;
+  padding: 8px 7px 8px 7px;
+  font-size: 14px;
+  line-height: 16px;
+  
+}
+
+
+ul.breadcrumb-nav > li {
+  font-size: 14px;
+  color: #fff;
+}
+ul.breadcrumb-nav > li > a, ul.breadcrumb-nav > li > strong {
+  display: block;
+  padding: 8px 7px 8px 7px;
+  font-size: 14px;
+  color: #fff;
+
+}
+ul.breadcrumb-nav > li > a:hover {
+  background-color: #1565C0;
+  color: #fff;
+}
+
+ul.breadcrumb-nav > li > strong {
+  display: block;
+  color: #fff;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+
+
+
+
+.x16-icon-nav:before {
+  background-image: url(img/x16_white_menu.png);
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+  display: inline-block; /* dopyt, zos˙ladiù s ostatn˝mi */
+  content: '';
+  background-repeat: no-repeat;
+  vertical-align: -3px;
+}
+
+
+
+
+div.content {
+  overflow: auto;
+  width: 80%;
+  margin: 24px auto 0 auto;
+  max-width: 1200px;
+  min-width: 950px;
+}
+div.wrap-list-item-bg {
+  background-color: #fff;
+  border-radius: 2px;
+  padding: 10px 20px;
+  overflow: auto;
+}
+div.wrap-list-item-bg > h3 {
+  font-size: 20px;
+  color: #757575;
+  line-height: 50px;
+  margin-bottom: 10px;
+
+}
+
+table.list-item-bg {
+ overflow: auto;
+ width: 100%;
+}
+table.list-item-bg thead th, table.list-item-bg thead th > a {
+  color: #bdbdbd;
+}
+table.list-item-bg thead th {
+  height: 16px;
   font-size: 11px;
 }
-table.zakaznici td.poradove {
-  padding-right: 13px;
-  text-align: right;
-  font-style: italic;
-  font-size: 12px;
+table.list-item-bg thead th > a:hover {
+  border-bottom: 1px solid #bdbdbd;
+  padding-bottom: 1px;
 }
-table.zakaznici tr.stripe-dark { background-color: #add8e6; }
-table.zakaznici thead th a { color: #000; }
-table.zakaznici thead th a > img {
-  width: 8px;
-  height: 8px;
+table.list-item-bg tbody tr {
+  background-color: #fff;
 }
-table.zakaznici tbody td {
-  height: 24px;
-  line-height: 24px;
-  text-align: center;
+table.list-item-bg tbody tr:first-child:hover {
+  background-color: #E0E0E0;
+  border-left: 4px solid #BDBDBD;
 }
-table.zakaznici tbody img {
-  position: relative;
-  top: 4px;
-  width: 18px;
-  height: 18px;
-  cursor: pointer;
-}
-table.zakaznici tfoot th { border-top: 2px solid #add8e6; }
-div.vymazico-btnbar {
-  margin-top: 10px;
-  text-align: center;
-}
-div.vymazico-btnbar input {
-  width: 80px;
-  padding: 4px 0;
+table.list-item-bg tbody td {
+  line-height: 26px;
   font-size: 14px;
+  color: #212121;
 }
-a.faktury-btn {
-  position: absolute;
-  top: 21px;
-  right: 1%;
-  width: 80px;
-  height: 25px;
-  line-height: 25px;
-  background-color: #39f;
+table.list-item-bg tbody td > a {
+  padding: 2px 6px;
+}
+table.list-item-bg tbody td > a:hover {
+  background-color: #fff;
+}
+
+
+
+
+a.btn-item-new {
+  z-index: 10;
+  position: fixed;
+  right: 24px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  box-shadow: 0px 2px 10px rgba(0,0,0,.3),0px 0px 1px rgba(0,0,0,.1),inset 0px 1px 0px rgba(255,255,255,.25),inset 0px -1px 0px rgba(0,0,0,.15); /* prefixy */
   color: #fff;
-  font-size: 13px;
-  font-weight: bold;
-  text-align: center;
+  background-color: #4CAF50;
+  font-size: 28px;
 }
-#col-left {
-  float: left;
-  width: 37%;
-  margin: 10px 0 0 1%;
+a.btn-item-new:hover {
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15); /* prefixy */
 }
-#col-right {
-  float: left;
-  width: 54%;
-  margin: 10px 4% 0 4%;
+
+
+a.btn-sort-slim:after {
+  vertical-align: -1px;
+  width: 10px;
+  height: 10px;
+  background-repeat: no-repeat;
+  background-image: url(img/x10_grey400_arrow37down.png);
+  margin-left: 3px;
+  display: inline-block; /* dopyt, zos˙ladiù s ostatn˝mi */
+  content: '';
+  background-repeat: no-repeat;
 }
-div.head-zakaznik {
-  width: 80px;
-  height: 20px;
-  line-height: 22px;
-  text-align: center;
-  background-color: lightblue;
-  font-size: 14px;
-}
-div.wrap-zakaznik {
-  overflow: auto;
-  width: 98%;
-  padding: 1%;
-  margin-bottom: 10px;
-  background-color: lightblue;
-}
+
+
 input[type=text] {
   height: 16px;
   line-height: 16px;
@@ -463,83 +426,34 @@ input[type=text] {
   border: 1px solid #39f;
   font-size: 13px;
 }
-img.editico-icon {
-  width: 18px;
-  height: 18px;
-  vertical-align: middle;
-  cursor: pointer;
-}
-div.wrap-faktura {
-  width: 100%;
-  min-width: 560px;
-}
-table.zakaznik {
-  width: 100%;
-}
-table.zakaznik select, table.zakaznik textarea {
-  border: 1px solid #39f;
-}
-table.zakaznik td, table.fahead td, table.fapol td {
-  height: 24px;
-  line-height: 24px;
-}
-table.zakaznik th {
-  height: 24px;
-  line-height: 24px;
-  font-size: 11px;
-  padding-right: 5px;
-  text-align: right;
-}
-table.fahead {
-  width: 430px;
-  margin: 0 auto;
-  font-size: 12px;
-}
-table.fapol {
-  width: 430px;
-  margin: 0 auto;
-}
-table.fapol th {
-  height: 24px;
-  line-height: 24px;
-  font-size: 11px;
-  text-align: left;
-  text-indent: 10px;
-}
-table.fapol td { text-align: right; }
-div.formsave-bar {
+
+
+div.btn-bar-bottom {
   overflow: auto;
-  width: 100%;
-  height: 46px;
-  margin-top: -10px;
+  width: 162px;
+  margin: 35px auto 25px auto;
+  background-color:;
+  
 }
-div.formsave-bar > a {
-  float: right;
-  width: 60px;
-  height: 26px;
-  line-height: 26px;
-  margin-top: 10px;
-  color: #39f;
-  text-align: right;
-  font-size: 13px;
-  font-weight: bold;
+
+div.btn-bar-bottom button {
+  padding: 8px 16px;
+  text-transform: uppercase;
+  font-size: 14px;
+  float: left;
+  margin-left: 15px;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  color:#42A5F5;
+  background-color: #F5F5F5;
 }
-div.formsave-bar > input {
-  float: right;
-  width: 100px;
-  height: 26px;
-  margin-top: 10px;
-  font-size: 13px;
+div.btn-bar-bottom button:hover {
+  background-color: #eee;
 }
+
+
 </style>
-
 <script type="text/javascript">
-//sirka a vyska okna
-var sirkawin = screen.width-10;
-var vyskawin = screen.height-175;
-var sirkawin = screen.width-10;
-var vyskawincel = screen.height;
-
 //uprava
 <?php if ( $copern == 8 ) { ?>
   function ObnovUI()
@@ -548,58 +462,30 @@ var vyskawincel = screen.height;
    document.formv1.name.value = '<?php echo "$name";?>';
    document.formv1.ckat.value = '<?php echo "$ckat";?>';
    document.formv1.paid.value = '<?php echo "$paid";?>';
-
   }
 <?php                     } ?>
 
-//uprava
 <?php if ( $copern != 8 ) { ?>
   function ObnovUI()
   {
   }
 <?php                     } ?>
 
-  function Povol_uloz()
+  function Povol_uloz() //dopyt, musÌ tu byù
   {
   }
 
-//preskakovanie ENTER-om
-  function ucezmlEnter(e)
-  {
-   var k = (navigator.appName=="Netscape") ? e : event.keyCode;
-   if ( k == 13 ){
-        document.forms.formv1.strzml.focus();
-        document.forms.formv1.strzml.select();
-                 }
-  }
-  function strzmlEnter(e)
-  {
-   var k = (navigator.appName=="Netscape") ? e : event.keyCode;
-   if ( k == 13 ){
-        document.forms.formv1.faktkedy.focus();
-        document.forms.formv1.taktako.select();
-                 }
-  }
 
-
-
-//Z ciarky na bodku
-  function CiarkaNaBodku(Vstup)
+  function NovaLekcia()
   {
-   if ( Vstup.value.search(/[^0-9.-]/g) != -1 ) { Vstup.value=Vstup.value.replace(",","."); }
-  }
-
-  function NewIco()
-  {
-   var h_icn = document.forms.fnewico.h_icn.value;
-   window.open('lessons.php?h_icn=' + h_icn + '&copern=5011&druhzoznamu=<?php echo $druhzoznamu; ?>&drupoh=1&page=1', '_self');
+   window.open('lesson.php?&copern=5011&druhzoznamu=<?php echo $druhzoznamu; ?>&drupoh=1&page=1', '_self');
   }
   function Hladaj()
   {
    var h_hladaj = document.forms.fnewico.h_hladaj.value;
    window.open('lessons.php?h_hladaj=' + h_hladaj + '&copern=9000&druhzoznamu=<?php echo $druhzoznamu; ?>&hladanie=1&drupoh=1&page=1', '_self');
   }
-  function KonHladaj()
+  function KonHladaj() //dopyt, Ëo je toto
   {
    var h_hladaj = document.forms.fnewico.h_hladaj.value;
    window.open('lessons.php?h_hladaj=&copern=1&druhzoznamu=<?php echo $druhzoznamu; ?>&hladanie=0&drupoh=1&page=1', '_self');
@@ -609,21 +495,10 @@ var vyskawincel = screen.height;
   {
    window.open('lessons.php?copern=1&drupoh=1&page=1&presun=1','_self');
   }
-  function ZoznamFak()
-  {
-   window.open('../faktury/vstfak.php?copern=9&drupoh=1&page=1&rozuct=NIE&sysx=INE&hladaj_nai=<?php echo $cislo_ico; ?>', '_blank', 'width=1080, height=900, top=0, left=10, status=yes, resizable=yes, scrollbars=yes');
-  }
-  function UpravIco()
-  {
-   window.open('../cis/cico.php?copern=88&page=1&cislo_ico=<?php echo $cislo_ico; ?>', '_blank', 'width=1080, height=900, top=0, left=10, status=yes, resizable=yes, scrollbars=yes');
-  }
+
   function Tlac1PDF()
   {
    window.open('najom_tlac.php?copern=1&page=1', '_blank', 'width=1080, height=900, top=0, left=10, status=yes, resizable=yes, scrollbars=yes');
-  }
-  function Export1FAK()
-  {
-   window.open('najom_export.php?copern=1&page=1', '_blank', 'width=1080, height=900, top=0, left=10, status=yes, resizable=yes, scrollbars=yes');
   }
 
   function UpravZml(pid)
@@ -637,21 +512,10 @@ var vyskawincel = screen.height;
    window.open('lessons.php?sys=<?php echo $sys; ?>&copern=6&druhzoznamu=<?php echo $druhzoznamu; ?>&page=<?php echo $page;?>&cislo_pid=' + pidx + '&tt=1', '_self');
   }
 </script>
-</HEAD>
-<BODY onload="ObnovUI();">
-
-<div id="wrap-heading">
- <table id="heading">
- <tr>
-  <td class="ilogin">EuroSecom</td>
-  <td class="ilogin" align="right">
-   
-  </td>
- </tr>
- <tr>
-  <td class="header">Lessons
+</head>
+<body onload="ObnovUI();">
 <?php
-$prev_oc=$cislo_pid-1; 
+$prev_oc=$cislo_pid-1;
 $next_oc=$cislo_pid+1;
 
 if ( $copern == 8 ) {
@@ -728,28 +592,30 @@ $sqlico = mysql_query("SELECT pid,ico,ciszml FROM lessons WHERE pid=$prev_oc ");
                     }
 //koniec copern=8
 ?>
+<!-- horna lista -->
+<div class="top-bar">
 
-<?php
- if ( $copern == 5 ) echo "- nov·";
- if ( $copern == 6 ) echo "- vymazanie";
- if ( $copern == 8 ) { echo "- ˙prava";
-?>
-  <img src="../obr/prev.png" onclick="UpravZml(<?php echo "$prev_oc"; ?>);" title="I»O <?php echo "$prev_ico zmluva $prev_zml"; ?>">
-  <img src="../obr/next.png" onclick="UpravZml(<?php echo "$next_oc"; ?>);" title="I»O <?php echo "$next_ico zmluva $next_zml"; ?>">
-<?php                } ?>
-  </td>
-  <td>
-<?php if ( $copern == 1 ) { ?>
-   <div class="bar-btn-form-tool">
-    <img src="../obr/ikony/upbox_blue_icon.png" onclick="Export1FAK();" title="Export lessons" class="btn-form-tool">
-    <img src="../obr/ikony/printer_blue_icon.png" onclick="Tlac1PDF();" title="Zobraziù zoznam za <?php echo $kli_vume; ?> v PDF" class="btn-form-tool">
-   </div>
-<?php                     } ?>
-  </td>
- </tr>
- </table>
-</div>
+<!--
+ <dl class="toleft breadcrumb-nav">
+ <dt class="toleft">
+  <a href="#" onclick="();" title="Prejsù na" class="x16-icon-nav">English2App</a>
+ </dt>
+ <dd>/</dd>
+ <dt class="toleft"><strong>Lessons</strong></dt>
+</dl>
+-->
 
+<ul class="toleft breadcrumb-nav" style="width:100%;">
+ <li class="toleft">
+  <a href="#" onclick="();" title="Prejsù na" class="x16-icon-nav">English2App</a>
+ </li>
+ <li class="toleft" style="margin-top:9px;">/</li>
+ <li class="toleft">
+  <strong>Lessons</strong>
+ </li>
+ <li class="toright"><strong>Login User</strong></li>
+ <li class="toright" style="background-color:#fff; width:1px; height:16px;
+  margin-left:8px; margin-top:8px;">&nbsp;</li>
 <?php
 //echo "cislo_ico ".$cislo_ico;
 //toto je cast na zobrazenie tabulky a prechody medzi stranami
@@ -762,19 +628,19 @@ $sqlico = mysql_query("SELECT pid,ico,ciszml FROM lessons WHERE pid=$prev_oc ");
 //7=hladanie
 //8=uprava
 //9=hladanie
-if ( $copern == 1 OR $copern == 2 OR $copern == 3 OR $copern == 4 OR $copern == 5 OR $copern == 6 OR $copern == 7 OR $copern == 8 OR $copern == 9 )
+if ( $copern == 1 OR $copern == 5 OR $copern == 6 OR $copern == 7 OR $copern == 8 OR $copern == 9 )
      {
-if ( $copern != 1 AND $copern != 2 AND $copern != 3 AND $copern != 4 AND $copern != 5 AND $copern != 6 AND $copern != 7 AND $copern != 8 AND $copern != 9 ) break;
+if ( $copern != 1 AND $copern != 5 AND $copern != 6 AND $copern != 7 AND $copern != 8 AND $copern != 9 ) break;
     do
     {
 //zobraz vsetko co je v tabulke
-if ( $copern == 1 OR $copern == 2 OR $copern == 3 OR $copern == 4 OR $copern == 5 OR $copern == 6 OR $copern == 8 OR $copern == 7 )
+if ( $copern == 1 OR $copern == 5 OR $copern == 6 OR $copern == 8 OR $copern == 7 )
   {
 $tried = 1*$_REQUEST['tried'];
 
 $sqlttt = "SELECT * FROM lessons ORDER BY pid";
-if ( $tried == 1 ) { $sqlttt = "SELECT * FROM lessons  ORDER BY pid"; }
-if ( $tried == 2 ) { $sqlttt = "SELECT * FROM lessons  ORDER BY pid"; }
+if ( $tried == 1 ) { $sqlttt = "SELECT * FROM lessons ORDER BY pid"; }
+if ( $tried == 2 ) { $sqlttt = "SELECT * FROM lessons ORDER BY pid"; }
 
 if ( $hladanie == 1 )
      {
@@ -793,262 +659,164 @@ $sql = mysql_query("SELECT * FROM lessons ORDER BY pid");
 //celkom poloziek
 $cpol = mysql_num_rows($sql);
 ?>
+ <li class="toright">
+  <img src="../obr/ikony/printer_blue_icon.png" onclick="Tlac1PDF();"
+   title="Zobraziù zoznam za <?php echo $kli_vume; ?> v PDF"
+   style="width:20px; height:20px; margin-left:10px;">
+ </li>
+ <li class="toright">
+<FORM name='fnewico' method='post' action='#' style="display:block; height:25px;">
+ <div class="search-bar hidden" style="width: 300px; padding: 4px; background-color: #add8e6;">
+  <input type="text" name="h_hladaj" id="h_hladaj" value='<?php echo $h_hladaj; ?>'
+   style="width: 200px; height: 22px; line-height: 22px; border: 1px solid #39f; text-indent: 3px; font-size: 14px;"/>
+  <a href="#" onclick="Hladaj();" style="margin-left:-4px; padding: 5px 10px; background-color: #39f;
+  color: white; font-size: 13px; font-weight: bold;" >Hæadaù</a>
+  <img src="../obr/ikony/reload_blue_icon.png" onclick="KonHladaj();" title="Obnoviù"
+   style="width: 20px; height: 20px; cursor: pointer;">
+ </div>
+</FORM>
+ </li>
 
+</ul>
+</div> <!-- .top-bar -->
+
+<div class="content">
 <?php
 //zobraz zoznam
  if ( $copern == 1 )
  {
 ?>
-<div class="content">
-<FORM name='fnewico' method='post' action='#' style="display:block; height:25px;">
- <div class="search-bar">
-  <input type="text" name="h_hladaj" id="h_hladaj" value='<?php echo $h_hladaj; ?>'/>
-  <a href="#" onclick="Hladaj();">Hæadaù</a>
-  <img src="../obr/ikony/reload_blue_icon.png" onclick="KonHladaj();" title="Obnoviù">
- </div>
- <div class="newico-bar">
-  <input type="text" name="h_icn" id="h_icn" maxlength="10"/>
-  <a href="#" onclick="NewIco();" title="Vytvoriù nov˙ lesson" >+NEW</a>
- </div>
-</FORM>
+<a href="#" onclick="NovaLekcia();" title="New lesson" class="btn-item-new"
+   style="top:50px;">+</a> <!-- dopyt, nie je funkËnÈ -->
 
-<table class="zakaznici"> <!-- zoznam najomcov -->
+<a href="#" onclick="NovaLekcia();" title="New lesson" class="btn-item-new"
+   style="bottom:24px;">+</a> <!-- dopyt, nie je funkËnÈ, daù podmienku aby zobrazilo, ak bude viac ako 20 poloûiek -->
+
+
+
+<!-- zoznam lekcii -->
+<table class="list-item-bg">
 <thead>
 <tr>
- <th width="5%">
-  <a href='lessons.php?sys=<?php echo $sys; ?>&copern=1&druhzoznamu=<?php echo $druhzoznamu; ?>&page=<?php echo $page;?>&tried=0' title="Zoradiù podæa poradia">
-  <img src="../obr/ikony/arrowdown_black_icon.png"> #</a>
+ <th width="9%">
+  <a href='lessons.php?sys=<?php echo $sys; ?>&copern=1&druhzoznamu=<?php echo $druhzoznamu; ?>&page=<?php echo $page;?>&tried=0'
+     title="" class="btn-sort-slim">#</a>
  </th>
- <th width="10%">
-  <a href='lessons.php?sys=<?php echo $sys; ?>&copern=1&druhzoznamu=<?php echo $druhzoznamu; ?>&page=<?php echo $page;?>&tried=2' title="Zoradiù podæa I»O">
-  <img src="../obr/ikony/arrowdown_black_icon.png"> type</a>
+ <th width="7%" class="left">Type</th>
+ <th width="40%" class="left">
+  <a href='lessons.php?sys=<?php echo $sys; ?>&copern=1&druhzoznamu=<?php echo $druhzoznamu; ?>&page=<?php echo $page;?>&tried=1'
+   title="" class="btn-sort-slim">Name</a>
  </th>
- <th width="35%">
-  <a href='lessons.php?sys=<?php echo $sys; ?>&copern=1&druhzoznamu=<?php echo $druhzoznamu; ?>&page=<?php echo $page;?>&tried=1' title="Zoradiù podæa n·zvu">
-  <img src="../obr/ikony/arrowdown_black_icon.png"> name</a>
+ <th width="14%" class="left">
+  <a href="" title="" class="btn-sort-slim">Category</a>
  </th>
- <th width="25%">ckat</th>
- <th width="15%">paid</th>
- <th width="10%"></th>
+ <th width="15%">Paid</th>
+ <th width="15%"></th>
 </tr>
 </thead>
-
-<?php while ( $i <= $cpol )
+<?php
+  while ( $i <= $cpol )
   {
   if (@$zaznam=mysql_data_seek($sql,$i))
 {
 $riadok=mysql_fetch_object($sql);
-$stripe="stripe-dark";
-if ( $par == 1 ) { $stripe="stripe-light"; }
 ?>
 <tbody>
-<tr class="<?php echo $stripe; ?>">
- <td class="poradove"><?php echo "$riadok->pid.";?></td>
- <td><?php echo $riadok->type;?></td>
- <td style="text-align:left;"><?php echo $riadok->name;?></td>
- <td><?php echo "$riadok->ckat";?></td>
- <td><?php echo $riadok->paid;?></td>
- <td>
-  <img src="../obr/ikony/pencil_blue_icon.png" onclick="UpravZml(<?php echo "$riadok->pid";?>);" title="Upraviù">&nbsp;&nbsp;
-  <img src="../obr/ikony/xmark_lred_icon.png" onclick="ZmazZml(<?php echo $riadok->pid;?>);" title="Vymazaù">
+<tr>
+ <td class="center"><?php echo "$riadok->pid."; ?></td>
+ <td><?php echo $riadok->type; ?></td>
+ <td><?php echo $riadok->name; ?></td>
+ <td><?php echo $riadok->ckat; ?></td>
+ <td class="center"><?php echo $riadok->paid; ?></td>
+ <td class="center">
+  <a href="#" onclick="UpravZml(<?php echo "$riadok->pid";?>);" title="Edit"
+     style="color:#42A5F5;">EDIT</a>
+  <a href="#" onclick="ZmazZml(<?php echo $riadok->pid;?>);" title="Delete"
+     style="color:#F44336;">DELETE</a>
  </td>
+</tr>
+<tr>
+ <td colspan="6" style="height:7px; background-color:#eee;"></td>
 </tr>
 </tbody>
 <?php
 }
 $i = $i + 1;
-if ( $par == 0 ) { $par=1; }
-else { $par=0; }
   }
 ?>
 <tfoot>
 <tr>
- <th><?php echo "= $cpol";?></th>
- <th colspan="5"></th>
+ <th colspan="6" style="height:10px;"></th>
 </tr>
 </tfoot>
 </table>
-
-</div> <!-- koniec .content -->
 <?php
  }
 //koniec zoznam
     } while (false);
-//koniec 1,2,3,4,5,6,7,8,9
+//koniec 1,5,6,7,8,9
 ?>
 
 
 <?php
 //vymazanie polozky
 if ( $copern == 6 )
-  {
+     {
 $cislo_pid = strip_tags($_REQUEST['cislo_pid']);
 $page = strip_tags($_REQUEST['page']);
 $sqlttt = "SELECT * FROM lessons  WHERE pid='$cislo_pid' ";
 $sql = mysql_query("$sqlttt");
 ?>
-<div class="content">
-
-<table class="zakaznici">
+<div class="wrap-list-item-bg">
+<h3>Delete lesson?</h3>
+<table class="list-item-bg">
+<thead>
 <tr>
- <th width="5%">#</th>
- <th width="10%">type</th>
- <th width="35%">name</th>
- <th width="25%">ckat</th>
- <th width="15%">paid</th>
- <th width="10%"></th>
+ <th width="9%">#</th>
+ <th width="7%" class="left">Type</th>
+ <th width="40%" class="left">Name</th>
+ <th width="14%" class="left">Category</th>
+ <th width="15%">Paid</th>
+ <th width="15%"></th>
 </tr>
-<tr class="stripe-dark">
-<?php while($zaznam=mysql_fetch_array($sql)):?>
- <td><?php echo $zaznam["pid"];?></td>
- <td><?php echo $zaznam["type"];?></td>
- <td><?php echo $zaznam["name"];?></td>
- <td><?php echo $zaznam["ckat"];?> / <?php echo $zaznam["xxx"];?></td>
- <td><?php echo $zaznam["paid"];?></td>
+</thead>
+<tbody>
+<tr style="border-top:1px solid #F44336; border-bottom:1px solid #F44336;">
+<?php while($zaznam=mysql_fetch_array($sql)): ?>
+ <td class="center"><?php echo $zaznam["pid"]; ?></td>
+ <td><?php echo $zaznam["type"]; ?></td>
+ <td><?php echo $zaznam["name"]; ?></td>
+ <td><?php echo $zaznam["ckat"]; ?></td>
+ <td class="center"><?php echo $zaznam["paid"]; ?></td>
  <td></td>
-<?php endwhile;?>
+<?php endwhile; ?>
 </tr>
+</tbody>
+<tfoot>
+<tr>
+ <td colspan="6"></td>
+</tr>
+</tfoot>
 </table>
-
-<div class="vymazico-btnbar">
- <FORM name="formv2" method="post" action="lessons.php?sys=<?php echo $sys; ?>&page=<?php echo $page;?>&copern=16&druhzoznamu=<?php echo $druhzoznamu; ?>&cislo_pid=<?php echo $cislo_pid;?>&cislo_cis=<?php echo $cislo_cis;?>&cislo_cen=<?php echo $cislo_cen;?>">
-  <INPUT type="submit" id="zmaz" name="zmaz" value="¡no">
- </FORM>&nbsp;
- <FORM name="formv3" method="post" action="lessons.php?sys=<?php echo $sys; ?>&page=<?php echo $page;?>&copern=1&druhzoznamu=<?php echo $druhzoznamu; ?>">
-  <INPUT type="submit" id="stornom" name="stornom" value="Nie">
- </FORM>
-</div>
-
-</div>
-<?php
-  }
-//koniec vymazanie
-?>
-
-
-<?php
-//zobraz pre novu a upravu polozky
-if ( $copern == 5 OR $copern == 8 )
-     {
-?>
-
-<div id="col-left"> <!-- lavy stlpec -->
-<div class="head-zakaznik"> </div>
-<div class="wrap-zakaznik">
- <table class="zakaznik">
- <FORM name="formv1" method="post" action="lessons.php?sys=<?php echo $sys; ?>&page=<?php echo $page;?>&copern=18&druhzoznamu=<?php echo $druhzoznamu; ?>&cislo_pid=<?php echo $cislo_pid;?>&cislo_cis=<?php echo $cislo_cis;?>&cislo_cen=<?php echo $cislo_cen;?>">
-
- <tr>
- 	<th>pid</th>
-  <td colspan="2">
-   <input type="text" name="pid" id="pid" value="<?php echo $cislo_pid; ?>" disabled="disabled" style="width:200px;"/>
-  </td>
- </tr>
- </table>
-</div>
-
-<div class="head-zakaznik"></div>
-<div class="wrap-zakaznik">
- <table class="zakaznik">
-
- <tr>
-  <th>type</th>
-  <td>
-   <select size="1" name="type" id="type" onkeydown="faktkedyEnter(event.which);" style="width:74px;">
-    <option value="A">A</option>
-    <option value="B">B</option>
-    <option value="C">C</option>
-    <option value="D">D</option>
-   </select>
-  </td>
-
- </tr>
-
- <tr>
-  <th>ckat</th>
-  <td>
-   <select size="1" name="ckat" id="ckat" onkeydown="faktkedyEnter(event.which);" style="width:74px;">
-    <option value="1">Cat 1</option>
-    <option value="2">Cat 2</option>
-    <option value="3">Cat 3</option>
-    <option value="4">Cat 4</option>
-   </select>
-  </td>
-
- </tr>
- </table>
-</div>
-
-<div class="head-zakaznik"></div>
-<div class="wrap-zakaznik">
- <table class="zakaznik">
- <tr>
-  <td>
-   name <input type="text" name="name" id="name" value="<?php echo $name; ?>" style="width:400px;"/>
-  </td>
- <tr>
-  <td>
-   name Sk <input type="text" name="name_sk" id="name_sk" value="<?php echo $name_sk; ?>" style="width:400px;"/>
-  </td>
- </tr>
-
- <tr>
-  <th>paid</th>
-  <td>
-   <select size="1" name="paid" id="paid" style="width:74px;">
-    <option value="0">free</option>
-    <option value="1">paid 1</option>
-    <option value="2">paid 2</option>
-    <option value="3">paid 3</option>
-   </select>
-  </td>
- </tr>
- </table>
-</div>
-
-<div class="formsave-bar" onmouseover="document.formv1.uloz.disabled = false;">
- <a href="#" onclick="Spat();">Sp‰ù</a>
- <INPUT type="submit" id="uloz" name="uloz" value="Uloûiù zmeny">
-</div>
-</div> <!-- koniec lavy stlpec -->
-
-<div id="col-right"> <!-- pravy stlpec -->
-<div class="wrap-faktura">
-
-
- <table class="fapol">
- <tr>
-  <th width="30%">desx</th>
-  <td width="70%"><textarea name="desx" id="desx" style="width:98%; height:120px; margin-top:5px;"><?php echo $desx; ?></textarea></td>
- </tr>
- <tr>
-  <th width="30%">exm1</th>
-  <td width="70%"><textarea name="exm1" id="exm1" style="width:98%; height:120px; margin-top:5px;"><?php echo $exm1; ?></textarea></td>
- </tr>
- <tr>
-  <th width="30%">exm2</th>
-  <td width="70%"><textarea name="exm2" id="exm2" style="width:98%; height:120px; margin-top:5px;"><?php echo $exm2; ?></textarea></td>
- </tr>
- <tr>
-  <th width="30%">important</th>
-  <td width="70%"><textarea name="important" id="important" style="width:98%; height:120px; margin-top:5px;"><?php echo $important; ?></textarea></td>
- </tr>
- </table>
-</div>
-</div> <!-- koniec pravy stlpec -->
-
+ <div class="btn-bar-bottom">
+<FORM name="formv2" method="post" action="lessons.php?sys=<?php echo $sys; ?>&page=<?php echo $page;?>&copern=16&druhzoznamu=<?php echo $druhzoznamu; ?>&cislo_pid=<?php echo $cislo_pid;?>&cislo_cis=<?php echo $cislo_cis;?>&cislo_cen=<?php echo $cislo_cen;?>">
+  <button type="submit" id="zmaz" name="zmaz" title="Delete">Yes</button>
 </FORM>
+<FORM name="formv3" method="post" action="lessons.php?sys=<?php echo $sys; ?>&page=<?php echo $page;?>&copern=1&druhzoznamu=<?php echo $druhzoznamu; ?>">
+  <button type="submit" id="stornom" name="stornom" title="No delete">No</button>
+</FORM>
+ </div>
+</div> <!-- .wrap-list-item-bg -->
 <?php
      }
-//koniec pre novu a upravu polozky
+//koniec vymazanie
 ?>
-
+</div> <!-- .content -->
 <?php
 //toto je koniec casti na zobrazenie tabulky a prechody medzi stranami
      }
 //celkovy koniec dokumentu
- } while (false);
+  } while (false);
 ?>
-<!-- m·m rovnak˙ datab·zu s servis.php -->
-</BODY>
-</HTML>
+</body>
+</html>
