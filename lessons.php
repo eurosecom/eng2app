@@ -478,7 +478,7 @@ div.btn-bar-bottom button:hover {
 
   function NovaLekcia()
   {
-   window.open('lesson.php?&copern=5011&druhzoznamu=<?php echo $druhzoznamu; ?>&drupoh=1&page=1', '_self');
+   window.open('lessons.php?copern=5011&druhzoznamu=<?php echo $druhzoznamu; ?>&drupoh=1&page=1', '_self');
   }
   function Hladaj()
   {
