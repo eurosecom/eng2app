@@ -34,8 +34,26 @@ $exm3 = $_REQUEST['exm3'];
 $exm4 = $_REQUEST['exm4'];
 $important = $_REQUEST['important'];
 
-$exc1_sa1ok = $_REQUEST['exc1_sa1ok'];
-$exc1_sb1ok = $_REQUEST['exc1_sb1ok'];
+//ex1
+$exc1_sa1ok1 = 1*$_REQUEST['exc1_sa1ok1'];
+$exc1_sa1ok2 = 1*$_REQUEST['exc1_sa1ok2'];
+$exc1_sa1ok3 = 1*$_REQUEST['exc1_sa1ok3'];
+$exc1_sa1ok4 = 1*$_REQUEST['exc1_sa1ok4'];
+$exc1_sa1ok=0;
+if( $exc1_sa1ok4 == 1 ) { $exc1_sa1ok=4; } 
+if( $exc1_sa1ok3 == 1 ) { $exc1_sa1ok=3; } 
+if( $exc1_sa1ok2 == 1 ) { $exc1_sa1ok=2; } 
+if( $exc1_sa1ok1 == 1 ) { $exc1_sa1ok=1; } 
+
+$exc1_sb1ok1 = 1*$_REQUEST['exc1_sb1ok1'];
+$exc1_sb1ok2 = 1*$_REQUEST['exc1_sb1ok2'];
+$exc1_sb1ok3 = 1*$_REQUEST['exc1_sb1ok3'];
+$exc1_sb1ok4 = 1*$_REQUEST['exc1_sb1ok4'];
+$exc1_sb1ok=0;
+if( $exc1_sb1ok4 == 1 ) { $exc1_sb1ok=4; } 
+if( $exc1_sb1ok3 == 1 ) { $exc1_sb1ok=3; } 
+if( $exc1_sb1ok2 == 1 ) { $exc1_sb1ok=2; } 
+if( $exc1_sb1ok1 == 1 ) { $exc1_sb1ok=1; } 
 
 $exc1_sa4x = $_REQUEST['exc1_sa4x'];
 $exc1_sa3x = $_REQUEST['exc1_sa3x'];
@@ -50,6 +68,111 @@ $exc1_sb1x = $_REQUEST['exc1_sb1x'];
 $exc1_ta3 = $_REQUEST['exc1_ta3'];
 $exc1_ta2 = $_REQUEST['exc1_ta2'];
 $exc1_ta1 = $_REQUEST['exc1_ta1'];
+
+//ex2
+$exc2_sa1ok1 = 1*$_REQUEST['exc2_sa1ok1'];
+$exc2_sa1ok2 = 1*$_REQUEST['exc2_sa1ok2'];
+$exc2_sa1ok3 = 1*$_REQUEST['exc2_sa1ok3'];
+$exc2_sa1ok4 = 1*$_REQUEST['exc2_sa1ok4'];
+$exc2_sa1ok=0;
+if( $exc2_sa1ok4 == 1 ) { $exc2_sa1ok=4; } 
+if( $exc2_sa1ok3 == 1 ) { $exc2_sa1ok=3; } 
+if( $exc2_sa1ok2 == 1 ) { $exc2_sa1ok=2; } 
+if( $exc2_sa1ok1 == 1 ) { $exc2_sa1ok=1; } 
+
+$exc2_sb1ok1 = 1*$_REQUEST['exc2_sb1ok1'];
+$exc2_sb1ok2 = 1*$_REQUEST['exc2_sb1ok2'];
+$exc2_sb1ok3 = 1*$_REQUEST['exc2_sb1ok3'];
+$exc2_sb1ok4 = 1*$_REQUEST['exc2_sb1ok4'];
+$exc2_sb1ok=0;
+if( $exc2_sb1ok4 == 1 ) { $exc2_sb1ok=4; } 
+if( $exc2_sb1ok3 == 1 ) { $exc2_sb1ok=3; } 
+if( $exc2_sb1ok2 == 1 ) { $exc2_sb1ok=2; } 
+if( $exc2_sb1ok1 == 1 ) { $exc2_sb1ok=1; } 
+
+$exc2_sa4x = $_REQUEST['exc2_sa4x'];
+$exc2_sa3x = $_REQUEST['exc2_sa3x'];
+$exc2_sa2x = $_REQUEST['exc2_sa2x'];
+$exc2_sa1x = $_REQUEST['exc2_sa1x'];
+
+$exc2_sb4x = $_REQUEST['exc2_sb4x'];
+$exc2_sb3x = $_REQUEST['exc2_sb3x'];
+$exc2_sb2x = $_REQUEST['exc2_sb2x'];
+$exc2_sb1x = $_REQUEST['exc2_sb1x'];
+
+$exc2_ta3 = $_REQUEST['exc2_ta3'];
+$exc2_ta2 = $_REQUEST['exc2_ta2'];
+$exc2_ta1 = $_REQUEST['exc2_ta1'];
+
+//ex3
+$exc3_sa1ok1 = 1*$_REQUEST['exc3_sa1ok1'];
+$exc3_sa1ok2 = 1*$_REQUEST['exc3_sa1ok2'];
+$exc3_sa1ok3 = 1*$_REQUEST['exc3_sa1ok3'];
+$exc3_sa1ok4 = 1*$_REQUEST['exc3_sa1ok4'];
+$exc3_sa1ok=0;
+if( $exc3_sa1ok4 == 1 ) { $exc3_sa1ok=4; } 
+if( $exc3_sa1ok3 == 1 ) { $exc3_sa1ok=3; } 
+if( $exc3_sa1ok2 == 1 ) { $exc3_sa1ok=2; } 
+if( $exc3_sa1ok1 == 1 ) { $exc3_sa1ok=1; } 
+
+$exc3_sb1ok1 = 1*$_REQUEST['exc3_sb1ok1'];
+$exc3_sb1ok2 = 1*$_REQUEST['exc3_sb1ok2'];
+$exc3_sb1ok3 = 1*$_REQUEST['exc3_sb1ok3'];
+$exc3_sb1ok4 = 1*$_REQUEST['exc3_sb1ok4'];
+$exc3_sb1ok=0;
+if( $exc3_sb1ok4 == 1 ) { $exc3_sb1ok=4; } 
+if( $exc3_sb1ok3 == 1 ) { $exc3_sb1ok=3; } 
+if( $exc3_sb1ok2 == 1 ) { $exc3_sb1ok=2; } 
+if( $exc3_sb1ok1 == 1 ) { $exc3_sb1ok=1; } 
+
+$exc3_sa4x = $_REQUEST['exc3_sa4x'];
+$exc3_sa3x = $_REQUEST['exc3_sa3x'];
+$exc3_sa2x = $_REQUEST['exc3_sa2x'];
+$exc3_sa1x = $_REQUEST['exc3_sa1x'];
+
+$exc3_sb4x = $_REQUEST['exc3_sb4x'];
+$exc3_sb3x = $_REQUEST['exc3_sb3x'];
+$exc3_sb2x = $_REQUEST['exc3_sb2x'];
+$exc3_sb1x = $_REQUEST['exc3_sb1x'];
+
+$exc3_ta3 = $_REQUEST['exc3_ta3'];
+$exc3_ta2 = $_REQUEST['exc3_ta2'];
+$exc3_ta1 = $_REQUEST['exc3_ta1'];
+
+//ex4
+$exc4_sa1ok1 = 1*$_REQUEST['exc4_sa1ok1'];
+$exc4_sa1ok2 = 1*$_REQUEST['exc4_sa1ok2'];
+$exc4_sa1ok3 = 1*$_REQUEST['exc4_sa1ok3'];
+$exc4_sa1ok4 = 1*$_REQUEST['exc4_sa1ok4'];
+$exc4_sa1ok=0;
+if( $exc4_sa1ok4 == 1 ) { $exc4_sa1ok=4; } 
+if( $exc4_sa1ok3 == 1 ) { $exc4_sa1ok=3; } 
+if( $exc4_sa1ok2 == 1 ) { $exc4_sa1ok=2; } 
+if( $exc4_sa1ok1 == 1 ) { $exc4_sa1ok=1; } 
+
+$exc4_sb1ok1 = 1*$_REQUEST['exc4_sb1ok1'];
+$exc4_sb1ok2 = 1*$_REQUEST['exc4_sb1ok2'];
+$exc4_sb1ok3 = 1*$_REQUEST['exc4_sb1ok3'];
+$exc4_sb1ok4 = 1*$_REQUEST['exc4_sb1ok4'];
+$exc4_sb1ok=0;
+if( $exc4_sb1ok4 == 1 ) { $exc4_sb1ok=4; } 
+if( $exc4_sb1ok3 == 1 ) { $exc4_sb1ok=3; } 
+if( $exc4_sb1ok2 == 1 ) { $exc4_sb1ok=2; } 
+if( $exc4_sb1ok1 == 1 ) { $exc4_sb1ok=1; } 
+
+$exc4_sa4x = $_REQUEST['exc4_sa4x'];
+$exc4_sa3x = $_REQUEST['exc4_sa3x'];
+$exc4_sa2x = $_REQUEST['exc4_sa2x'];
+$exc4_sa1x = $_REQUEST['exc4_sa1x'];
+
+$exc4_sb4x = $_REQUEST['exc4_sb4x'];
+$exc4_sb3x = $_REQUEST['exc4_sb3x'];
+$exc4_sb2x = $_REQUEST['exc4_sb2x'];
+$exc4_sb1x = $_REQUEST['exc4_sb1x'];
+
+$exc4_ta3 = $_REQUEST['exc4_ta3'];
+$exc4_ta2 = $_REQUEST['exc4_ta2'];
+$exc4_ta1 = $_REQUEST['exc4_ta1'];
 
 //uprava 18
 if ( $copern == 18 )
@@ -71,6 +194,48 @@ $uprtxt = "UPDATE lessons SET ".
 " exc1_sa4x='$exc1_sa4x', exc1_sa3x='$exc1_sa3x', exc1_sa2x='$exc1_sa2x', exc1_sa1x='$exc1_sa1x', ".
 " exc1_sb4x='$exc1_sb4x', exc1_sb3x='$exc1_sb3x', exc1_sb2x='$exc1_sb2x', exc1_sb1x='$exc1_sb1x', ".
 " exc1_ta3='$exc1_ta3', exc1_ta2='$exc1_ta2', exc1_ta1='$exc1_ta1' ".
+" WHERE pid='$cislo_pid'";
+
+//echo $uprtxt;
+$upravene = mysql_query("$uprtxt");
+
+                    }
+
+if( $copernx == 22 ) {
+
+$uprtxt = "UPDATE lessons SET ".
+" exc2_sa1ok='$exc2_sa1ok', exc2_sb1ok='$exc2_sb1ok', ".
+" exc2_sa4x='$exc2_sa4x', exc2_sa3x='$exc2_sa3x', exc2_sa2x='$exc2_sa2x', exc2_sa1x='$exc2_sa1x', ".
+" exc2_sb4x='$exc2_sb4x', exc2_sb3x='$exc2_sb3x', exc2_sb2x='$exc2_sb2x', exc2_sb1x='$exc2_sb1x', ".
+" exc2_ta3='$exc2_ta3', exc2_ta2='$exc2_ta2', exc2_ta1='$exc2_ta1' ".
+" WHERE pid='$cislo_pid'";
+
+//echo $uprtxt;
+$upravene = mysql_query("$uprtxt");
+
+                    }
+
+if( $copernx == 23 ) {
+
+$uprtxt = "UPDATE lessons SET ".
+" exc3_sa1ok='$exc3_sa1ok', exc3_sb1ok='$exc3_sb1ok', ".
+" exc3_sa4x='$exc3_sa4x', exc3_sa3x='$exc3_sa3x', exc3_sa2x='$exc3_sa2x', exc3_sa1x='$exc3_sa1x', ".
+" exc3_sb4x='$exc3_sb4x', exc3_sb3x='$exc3_sb3x', exc3_sb2x='$exc3_sb2x', exc3_sb1x='$exc3_sb1x', ".
+" exc3_ta3='$exc3_ta3', exc3_ta2='$exc3_ta2', exc3_ta1='$exc3_ta1' ".
+" WHERE pid='$cislo_pid'";
+
+//echo $uprtxt;
+$upravene = mysql_query("$uprtxt");
+
+                    }
+
+if( $copernx == 24 ) {
+
+$uprtxt = "UPDATE lessons SET ".
+" exc4_sa1ok='$exc4_sa1ok', exc4_sb1ok='$exc4_sb1ok', ".
+" exc4_sa4x='$exc4_sa4x', exc4_sa3x='$exc4_sa3x', exc4_sa2x='$exc4_sa2x', exc4_sa1x='$exc4_sa1x', ".
+" exc4_sb4x='$exc4_sb4x', exc4_sb3x='$exc4_sb3x', exc4_sb2x='$exc4_sb2x', exc4_sb1x='$exc4_sb1x', ".
+" exc4_ta3='$exc4_ta3', exc4_ta2='$exc4_ta2', exc4_ta1='$exc4_ta1' ".
 " WHERE pid='$cislo_pid'";
 
 //echo $uprtxt;
@@ -113,9 +278,7 @@ $exm3 = $riadok->exm3;
 $exm4 = $riadok->exm4;
 $important = $riadok->important;
 
-$exc1_sa1ok = $riadok->exc1_sa1ok;
-$exc1_sb1ok = $riadok->exc1_sb1ok;
-
+//ex1
 $exc1_sa4x = $riadok->exc1_sa4x;
 $exc1_sa3x = $riadok->exc1_sa3x;
 $exc1_sa2x = $riadok->exc1_sa2x;
@@ -129,6 +292,111 @@ $exc1_sb1x = $riadok->exc1_sb1x;
 $exc1_ta3 = $riadok->exc1_ta3;
 $exc1_ta2 = $riadok->exc1_ta2;
 $exc1_ta1 = $riadok->exc1_ta1;
+
+$exc1_sa1ok = 1*$riadok->exc1_sa1ok;
+$exc1_sa1ok1=0;$exc1_sa1ok2=0; $exc1_sa1ok3=0; $exc1_sa1ok4=0; 
+if( $exc1_sa1ok == 1 ) { $exc1_sa1ok1=1; }
+if( $exc1_sa1ok == 2 ) { $exc1_sa1ok2=1; }
+if( $exc1_sa1ok == 3 ) { $exc1_sa1ok3=1; }
+if( $exc1_sa1ok == 4 ) { $exc1_sa1ok4=1; }
+
+$exc1_sb1ok = 1*$riadok->exc1_sb1ok;
+$exc1_sb1ok1=0;$exc1_sb1ok2=0; $exc1_sb1ok3=0; $exc1_sb1ok4=0; 
+if( $exc1_sb1ok == 1 ) { $exc1_sb1ok1=1; }
+if( $exc1_sb1ok == 2 ) { $exc1_sb1ok2=1; }
+if( $exc1_sb1ok == 3 ) { $exc1_sb1ok3=1; }
+if( $exc1_sb1ok == 4 ) { $exc1_sb1ok4=1; }
+
+//ex2
+$exc2_sa4x = $riadok->exc2_sa4x;
+$exc2_sa3x = $riadok->exc2_sa3x;
+$exc2_sa2x = $riadok->exc2_sa2x;
+$exc2_sa1x = $riadok->exc2_sa1x;
+
+$exc2_sb4x = $riadok->exc2_sb4x;
+$exc2_sb3x = $riadok->exc2_sb3x;
+$exc2_sb2x = $riadok->exc2_sb2x;
+$exc2_sb1x = $riadok->exc2_sb1x;
+
+$exc2_ta3 = $riadok->exc2_ta3;
+$exc2_ta2 = $riadok->exc2_ta2;
+$exc2_ta1 = $riadok->exc2_ta1;
+
+$exc2_sa1ok = 1*$riadok->exc2_sa1ok;
+$exc2_sa1ok1=0;$exc2_sa1ok2=0; $exc2_sa1ok3=0; $exc2_sa1ok4=0; 
+if( $exc2_sa1ok == 1 ) { $exc2_sa1ok1=1; }
+if( $exc2_sa1ok == 2 ) { $exc2_sa1ok2=1; }
+if( $exc2_sa1ok == 3 ) { $exc2_sa1ok3=1; }
+if( $exc2_sa1ok == 4 ) { $exc2_sa1ok4=1; }
+
+$exc2_sb1ok = 1*$riadok->exc2_sb1ok;
+$exc2_sb1ok1=0;$exc2_sb1ok2=0; $exc2_sb1ok3=0; $exc2_sb1ok4=0; 
+if( $exc2_sb1ok == 1 ) { $exc2_sb1ok1=1; }
+if( $exc2_sb1ok == 2 ) { $exc2_sb1ok2=1; }
+if( $exc2_sb1ok == 3 ) { $exc2_sb1ok3=1; }
+if( $exc2_sb1ok == 4 ) { $exc2_sb1ok4=1; }
+
+//ex3
+$exc3_sa4x = $riadok->exc3_sa4x;
+$exc3_sa3x = $riadok->exc3_sa3x;
+$exc3_sa2x = $riadok->exc3_sa2x;
+$exc3_sa1x = $riadok->exc3_sa1x;
+
+$exc3_sb4x = $riadok->exc3_sb4x;
+$exc3_sb3x = $riadok->exc3_sb3x;
+$exc3_sb2x = $riadok->exc3_sb2x;
+$exc3_sb1x = $riadok->exc3_sb1x;
+
+$exc3_ta3 = $riadok->exc3_ta3;
+$exc3_ta2 = $riadok->exc3_ta2;
+$exc3_ta1 = $riadok->exc3_ta1;
+
+$exc3_sa1ok = 1*$riadok->exc3_sa1ok;
+$exc3_sa1ok1=0;$exc3_sa1ok2=0; $exc3_sa1ok3=0; $exc3_sa1ok4=0; 
+if( $exc3_sa1ok == 1 ) { $exc3_sa1ok1=1; }
+if( $exc3_sa1ok == 2 ) { $exc3_sa1ok2=1; }
+if( $exc3_sa1ok == 3 ) { $exc3_sa1ok3=1; }
+if( $exc3_sa1ok == 4 ) { $exc3_sa1ok4=1; }
+
+$exc3_sb1ok = 1*$riadok->exc3_sb1ok;
+$exc3_sb1ok1=0;$exc3_sb1ok2=0; $exc3_sb1ok3=0; $exc3_sb1ok4=0; 
+if( $exc3_sb1ok == 1 ) { $exc3_sb1ok1=1; }
+if( $exc3_sb1ok == 2 ) { $exc3_sb1ok2=1; }
+if( $exc3_sb1ok == 3 ) { $exc3_sb1ok3=1; }
+if( $exc3_sb1ok == 4 ) { $exc3_sb1ok4=1; }
+
+
+//ex4
+$exc4_sa4x = $riadok->exc4_sa4x;
+$exc4_sa3x = $riadok->exc4_sa3x;
+$exc4_sa2x = $riadok->exc4_sa2x;
+$exc4_sa1x = $riadok->exc4_sa1x;
+
+$exc4_sb4x = $riadok->exc4_sb4x;
+$exc4_sb3x = $riadok->exc4_sb3x;
+$exc4_sb2x = $riadok->exc4_sb2x;
+$exc4_sb1x = $riadok->exc4_sb1x;
+
+$exc4_ta3 = $riadok->exc4_ta3;
+$exc4_ta2 = $riadok->exc4_ta2;
+$exc4_ta1 = $riadok->exc4_ta1;
+
+$exc4_sa1ok = 1*$riadok->exc4_sa1ok;
+$exc4_sa1ok1=0;$exc4_sa1ok2=0; $exc4_sa1ok3=0; $exc4_sa1ok4=0; 
+if( $exc4_sa1ok == 1 ) { $exc4_sa1ok1=1; }
+if( $exc4_sa1ok == 2 ) { $exc4_sa1ok2=1; }
+if( $exc4_sa1ok == 3 ) { $exc4_sa1ok3=1; }
+if( $exc4_sa1ok == 4 ) { $exc4_sa1ok4=1; }
+
+$exc4_sb1ok = 1*$riadok->exc4_sb1ok;
+$exc4_sb1ok1=0;$exc4_sb1ok2=0; $exc4_sb1ok3=0; $exc4_sb1ok4=0; 
+if( $exc4_sb1ok == 1 ) { $exc4_sb1ok1=1; }
+if( $exc4_sb1ok == 2 ) { $exc4_sb1ok2=1; }
+if( $exc4_sb1ok == 3 ) { $exc4_sb1ok3=1; }
+if( $exc4_sb1ok == 4 ) { $exc4_sb1ok4=1; }
+
+
+
 
   }
     }
@@ -317,7 +585,77 @@ var vyskawincel = screen.height;
    document.formv1.ckat.value = '<?php echo "$ckat";?>';
    document.formv1.paid.value = '<?php echo "$paid";?>';
 
+<?php
+if ( $copern == 21 )
+   {
 
+
+if( $exc1_sa1ok1 == 1 ) { echo "document.formv1.exc1_sa1ok1.checked = \"checked\";"."\n\r"; }
+if( $exc1_sa1ok2 == 1 ) { echo "document.formv1.exc1_sa1ok2.checked = \"checked\";"."\n\r"; }
+if( $exc1_sa1ok3 == 1 ) { echo "document.formv1.exc1_sa1ok3.checked = \"checked\";"."\n\r"; }
+if( $exc1_sa1ok4 == 1 ) { echo "document.formv1.exc1_sa1ok4.checked = \"checked\";"."\n\r"; }
+
+if( $exc1_sb1ok1 == 1 ) { echo "document.formv1.exc1_sb1ok1.checked = \"checked\";"."\n\r"; }
+if( $exc1_sb1ok2 == 1 ) { echo "document.formv1.exc1_sb1ok2.checked = \"checked\";"."\n\r"; }
+if( $exc1_sb1ok3 == 1 ) { echo "document.formv1.exc1_sb1ok3.checked = \"checked\";"."\n\r"; }
+if( $exc1_sb1ok4 == 1 ) { echo "document.formv1.exc1_sb1ok4.checked = \"checked\";"."\n\r"; }
+
+   }
+?>
+
+<?php
+if ( $copern == 22 )
+   {
+
+
+if( $exc2_sa1ok1 == 1 ) { echo "document.formv1.exc2_sa1ok1.checked = \"checked\";"."\n\r"; }
+if( $exc2_sa1ok2 == 1 ) { echo "document.formv1.exc2_sa1ok2.checked = \"checked\";"."\n\r"; }
+if( $exc2_sa1ok3 == 1 ) { echo "document.formv1.exc2_sa1ok3.checked = \"checked\";"."\n\r"; }
+if( $exc2_sa1ok4 == 1 ) { echo "document.formv1.exc2_sa1ok4.checked = \"checked\";"."\n\r"; }
+
+if( $exc2_sb1ok1 == 1 ) { echo "document.formv1.exc2_sb1ok1.checked = \"checked\";"."\n\r"; }
+if( $exc2_sb1ok2 == 1 ) { echo "document.formv1.exc2_sb1ok2.checked = \"checked\";"."\n\r"; }
+if( $exc2_sb1ok3 == 1 ) { echo "document.formv1.exc2_sb1ok3.checked = \"checked\";"."\n\r"; }
+if( $exc2_sb1ok4 == 1 ) { echo "document.formv1.exc2_sb1ok4.checked = \"checked\";"."\n\r"; }
+
+   }
+?>
+
+<?php
+if ( $copern == 23 )
+   {
+
+
+if( $exc3_sa1ok1 == 1 ) { echo "document.formv1.exc3_sa1ok1.checked = \"checked\";"."\n\r"; }
+if( $exc3_sa1ok2 == 1 ) { echo "document.formv1.exc3_sa1ok2.checked = \"checked\";"."\n\r"; }
+if( $exc3_sa1ok3 == 1 ) { echo "document.formv1.exc3_sa1ok3.checked = \"checked\";"."\n\r"; }
+if( $exc3_sa1ok4 == 1 ) { echo "document.formv1.exc3_sa1ok4.checked = \"checked\";"."\n\r"; }
+
+if( $exc3_sb1ok1 == 1 ) { echo "document.formv1.exc3_sb1ok1.checked = \"checked\";"."\n\r"; }
+if( $exc3_sb1ok2 == 1 ) { echo "document.formv1.exc3_sb1ok2.checked = \"checked\";"."\n\r"; }
+if( $exc3_sb1ok3 == 1 ) { echo "document.formv1.exc3_sb1ok3.checked = \"checked\";"."\n\r"; }
+if( $exc3_sb1ok4 == 1 ) { echo "document.formv1.exc3_sb1ok4.checked = \"checked\";"."\n\r"; }
+
+   }
+?>
+
+<?php
+if ( $copern == 24 )
+   {
+
+
+if( $exc4_sa1ok1 == 1 ) { echo "document.formv1.exc4_sa1ok1.checked = \"checked\";"."\n\r"; }
+if( $exc4_sa1ok2 == 1 ) { echo "document.formv1.exc4_sa1ok2.checked = \"checked\";"."\n\r"; }
+if( $exc4_sa1ok3 == 1 ) { echo "document.formv1.exc4_sa1ok3.checked = \"checked\";"."\n\r"; }
+if( $exc4_sa1ok4 == 1 ) { echo "document.formv1.exc4_sa1ok4.checked = \"checked\";"."\n\r"; }
+
+if( $exc4_sb1ok1 == 1 ) { echo "document.formv1.exc4_sb1ok1.checked = \"checked\";"."\n\r"; }
+if( $exc4_sb1ok2 == 1 ) { echo "document.formv1.exc4_sb1ok2.checked = \"checked\";"."\n\r"; }
+if( $exc4_sb1ok3 == 1 ) { echo "document.formv1.exc4_sb1ok3.checked = \"checked\";"."\n\r"; }
+if( $exc4_sb1ok4 == 1 ) { echo "document.formv1.exc4_sb1ok4.checked = \"checked\";"."\n\r"; }
+
+   }
+?>
 
   }
 <?php                     } ?>
@@ -467,38 +805,137 @@ if ( $copern == 23 ) $clas3="active"; if ( $copern == 24 ) $clas4="active";
 
 
 
-<?php if ( $copern == 2 OR $copern == 21 OR $copern == 22 OR $copern == 23 OR $copern == 24 ) { ?>
+<?php if ( $copern == 21 ) { ?>
 <p>
  <input type="text" name="exc1_ta1" id="exc1_ta1" value="<?php echo $exc1_ta1; ?>" placeholder="" style="width:200px;"/>
 </p>
 <p>
    <input type="text" name="exc1_sa1x" id="exc1_sa1x" value="<?php echo $exc1_sa1x; ?>" placeholder="" style="width:120px;"/>
-   <input type="checkbox" name="" value="1">
+   <input type="checkbox" name="exc1_sa1ok1" value="1">
    <input type="text" name="exc1_sa2x" id="exc1_sa2x" value="<?php echo $exc1_sa2x; ?>" placeholder="" style="width:120px;"/>
-   <input type="checkbox" name="" value="1">
+   <input type="checkbox" name="exc1_sa1ok2" value="1">
    <input type="text" name="exc1_sa3x" id="exc1_sa3x" value="<?php echo $exc1_sa3x; ?>" placeholder="" style="width:120px;"/>
-   <input type="checkbox" name="" value="1">
+   <input type="checkbox" name="exc1_sa1ok3" value="1">
    <input type="text" name="exc1_sa4x" id="exc1_sa4x" value="<?php echo $exc1_sa4x; ?>" placeholder="" style="width:120px;"/>
-   <input type="checkbox" name="" value="1">
+   <input type="checkbox" name="exc1_sa1ok4" value="1">
 </p>
 <p>
  <input type="text" name="exc1_ta2" id="exc1_ta2" value="<?php echo $exc1_ta2; ?>" placeholder="" style="width:200px;"/>
 </p>
 <p>
    <input type="text" name="exc1_sb1x" id="exc1_sb1x" value="<?php echo $exc1_sb1x; ?>" placeholder="" style="width:120px;"/>
-   <input type="checkbox" name="" value="1">
+   <input type="checkbox" name="exc1_sb1ok1" value="1">
    <input type="text" name="exc1_sb2x" id="exc1_sb2x" value="<?php echo $exc1_sb2x; ?>" placeholder="" style="width:120px;"/>
-   <input type="checkbox" name="" value="1">
+   <input type="checkbox" name="exc1_sb1ok2" value="1">
    <input type="text" name="exc1_sb3x" id="exc1_sb3x" value="<?php echo $exc1_sb3x; ?>" placeholder="" style="width:120px;"/>
-   <input type="checkbox" name="" value="1">
+   <input type="checkbox" name="exc1_sb1ok3" value="1">
    <input type="text" name="exc1_sb4x" id="exc1_sb4x" value="<?php echo $exc1_sb4x; ?>" placeholder="" style="width:120px;"/>
-   <input type="checkbox" name="" value="1">
+   <input type="checkbox" name="exc1_sb1ok4" value="1">
 </p>
 <p>
  <input type="text" name="exc1_ta3" id="exc1_ta3" value="<?php echo $exc1_ta3; ?>" placeholder="" style="width:200px;"/>
 </p>
 
-<?php                                                                         } ?>
+<?php                      } ?>
+
+<?php if ( $copern == 22 ) { ?>
+<p>
+ <input type="text" name="exc2_ta1" id="exc2_ta1" value="<?php echo $exc2_ta1; ?>" placeholder="" style="width:200px;"/>
+</p>
+<p>
+   <input type="text" name="exc2_sa1x" id="exc2_sa1x" value="<?php echo $exc2_sa1x; ?>" placeholder="" style="width:120px;"/>
+   <input type="checkbox" name="exc2_sa1ok1" value="1">
+   <input type="text" name="exc2_sa2x" id="exc2_sa2x" value="<?php echo $exc2_sa2x; ?>" placeholder="" style="width:120px;"/>
+   <input type="checkbox" name="exc2_sa1ok2" value="1">
+   <input type="text" name="exc2_sa3x" id="exc2_sa3x" value="<?php echo $exc2_sa3x; ?>" placeholder="" style="width:120px;"/>
+   <input type="checkbox" name="exc2_sa1ok3" value="1">
+   <input type="text" name="exc2_sa4x" id="exc2_sa4x" value="<?php echo $exc2_sa4x; ?>" placeholder="" style="width:120px;"/>
+   <input type="checkbox" name="exc2_sa1ok4" value="1">
+</p>
+<p>
+ <input type="text" name="exc2_ta2" id="exc2_ta2" value="<?php echo $exc2_ta2; ?>" placeholder="" style="width:200px;"/>
+</p>
+<p>
+   <input type="text" name="exc2_sb1x" id="exc2_sb1x" value="<?php echo $exc2_sb1x; ?>" placeholder="" style="width:120px;"/>
+   <input type="checkbox" name="exc2_sb1ok1" value="1">
+   <input type="text" name="exc2_sb2x" id="exc2_sb2x" value="<?php echo $exc2_sb2x; ?>" placeholder="" style="width:120px;"/>
+   <input type="checkbox" name="exc2_sb1ok2" value="1">
+   <input type="text" name="exc2_sb3x" id="exc2_sb3x" value="<?php echo $exc2_sb3x; ?>" placeholder="" style="width:120px;"/>
+   <input type="checkbox" name="exc2_sb1ok3" value="1">
+   <input type="text" name="exc2_sb4x" id="exc2_sb4x" value="<?php echo $exc2_sb4x; ?>" placeholder="" style="width:120px;"/>
+   <input type="checkbox" name="exc2_sb1ok4" value="1">
+</p>
+<p>
+ <input type="text" name="exc2_ta3" id="exc2_ta3" value="<?php echo $exc2_ta3; ?>" placeholder="" style="width:200px;"/>
+</p>
+
+<?php                      } ?>
+
+<?php if ( $copern == 23 ) { ?>
+<p>
+ <input type="text" name="exc3_ta1" id="exc3_ta1" value="<?php echo $exc3_ta1; ?>" placeholder="" style="width:200px;"/>
+</p>
+<p>
+   <input type="text" name="exc3_sa1x" id="exc3_sa1x" value="<?php echo $exc3_sa1x; ?>" placeholder="" style="width:120px;"/>
+   <input type="checkbox" name="exc3_sa1ok1" value="1">
+   <input type="text" name="exc3_sa2x" id="exc3_sa2x" value="<?php echo $exc3_sa2x; ?>" placeholder="" style="width:120px;"/>
+   <input type="checkbox" name="exc3_sa1ok2" value="1">
+   <input type="text" name="exc3_sa3x" id="exc3_sa3x" value="<?php echo $exc3_sa3x; ?>" placeholder="" style="width:120px;"/>
+   <input type="checkbox" name="exc3_sa1ok3" value="1">
+   <input type="text" name="exc3_sa4x" id="exc3_sa4x" value="<?php echo $exc3_sa4x; ?>" placeholder="" style="width:120px;"/>
+   <input type="checkbox" name="exc3_sa1ok4" value="1">
+</p>
+<p>
+ <input type="text" name="exc3_ta2" id="exc3_ta2" value="<?php echo $exc3_ta2; ?>" placeholder="" style="width:200px;"/>
+</p>
+<p>
+   <input type="text" name="exc3_sb1x" id="exc3_sb1x" value="<?php echo $exc3_sb1x; ?>" placeholder="" style="width:120px;"/>
+   <input type="checkbox" name="exc3_sb1ok1" value="1">
+   <input type="text" name="exc3_sb2x" id="exc3_sb2x" value="<?php echo $exc3_sb2x; ?>" placeholder="" style="width:120px;"/>
+   <input type="checkbox" name="exc3_sb1ok2" value="1">
+   <input type="text" name="exc3_sb3x" id="exc3_sb3x" value="<?php echo $exc3_sb3x; ?>" placeholder="" style="width:120px;"/>
+   <input type="checkbox" name="exc3_sb1ok3" value="1">
+   <input type="text" name="exc3_sb4x" id="exc3_sb4x" value="<?php echo $exc3_sb4x; ?>" placeholder="" style="width:120px;"/>
+   <input type="checkbox" name="exc3_sb1ok4" value="1">
+</p>
+<p>
+ <input type="text" name="exc3_ta3" id="exc3_ta3" value="<?php echo $exc3_ta3; ?>" placeholder="" style="width:200px;"/>
+</p>
+
+<?php                      } ?>
+
+<?php if ( $copern == 24 ) { ?>
+<p>
+ <input type="text" name="exc4_ta1" id="exc4_ta1" value="<?php echo $exc4_ta1; ?>" placeholder="" style="width:200px;"/>
+</p>
+<p>
+   <input type="text" name="exc4_sa1x" id="exc4_sa1x" value="<?php echo $exc4_sa1x; ?>" placeholder="" style="width:120px;"/>
+   <input type="checkbox" name="exc4_sa1ok1" value="1">
+   <input type="text" name="exc4_sa2x" id="exc4_sa2x" value="<?php echo $exc4_sa2x; ?>" placeholder="" style="width:120px;"/>
+   <input type="checkbox" name="exc4_sa1ok2" value="1">
+   <input type="text" name="exc4_sa3x" id="exc4_sa3x" value="<?php echo $exc4_sa3x; ?>" placeholder="" style="width:120px;"/>
+   <input type="checkbox" name="exc4_sa1ok3" value="1">
+   <input type="text" name="exc4_sa4x" id="exc4_sa4x" value="<?php echo $exc4_sa4x; ?>" placeholder="" style="width:120px;"/>
+   <input type="checkbox" name="exc4_sa1ok4" value="1">
+</p>
+<p>
+ <input type="text" name="exc4_ta2" id="exc4_ta2" value="<?php echo $exc4_ta2; ?>" placeholder="" style="width:200px;"/>
+</p>
+<p>
+   <input type="text" name="exc4_sb1x" id="exc4_sb1x" value="<?php echo $exc4_sb1x; ?>" placeholder="" style="width:120px;"/>
+   <input type="checkbox" name="exc4_sb1ok1" value="1">
+   <input type="text" name="exc4_sb2x" id="exc4_sb2x" value="<?php echo $exc4_sb2x; ?>" placeholder="" style="width:120px;"/>
+   <input type="checkbox" name="exc4_sb1ok2" value="1">
+   <input type="text" name="exc4_sb3x" id="exc4_sb3x" value="<?php echo $exc4_sb3x; ?>" placeholder="" style="width:120px;"/>
+   <input type="checkbox" name="exc4_sb1ok3" value="1">
+   <input type="text" name="exc4_sb4x" id="exc4_sb4x" value="<?php echo $exc4_sb4x; ?>" placeholder="" style="width:120px;"/>
+   <input type="checkbox" name="exc4_sb1ok4" value="1">
+</p>
+<p>
+ <input type="text" name="exc4_ta3" id="exc4_ta3" value="<?php echo $exc4_ta3; ?>" placeholder="" style="width:200px;"/>
+</p>
+
+<?php                      } ?>
 </fieldset>
 
 <fieldset>

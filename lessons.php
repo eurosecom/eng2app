@@ -59,7 +59,7 @@ $vysledek = mysql_query("$sql");
 //echo $sql;
 }
 
-$sql = "SELECT exc1_ta3 FROM lessons";
+$sql = "SELECT exc4_ta1 FROM lessons";
 $vysledok = mysql_query("$sql");
 if ( !$vysledok )
 {
@@ -69,7 +69,7 @@ $vysledek = mysql_query("$sql");
 $sql = "ALTER TABLE lessons ADD exm4 TEXT NOT NULL AFTER exm3";
 $vysledek = mysql_query("$sql");
 
-
+//ex2
 $sql = "ALTER TABLE lessons ADD exc2_sa1ok DECIMAL(10,0) DEFAULT 0 AFTER konx";
 $vysledek = mysql_query("$sql");
 $sql = "ALTER TABLE lessons ADD exc2_sb1ok DECIMAL(10,0) DEFAULT 0 AFTER konx";
@@ -100,7 +100,7 @@ $vysledek = mysql_query("$sql");
 $sql = "ALTER TABLE lessons ADD exc2_ta1 VARCHAR(80) NOT NULL AFTER konx";
 $vysledek = mysql_query("$sql");
 
-
+//ex1
 $sql = "ALTER TABLE lessons ADD exc1_sa1ok DECIMAL(10,0) DEFAULT 0 AFTER konx";
 $vysledek = mysql_query("$sql");
 $sql = "ALTER TABLE lessons ADD exc1_sb1ok DECIMAL(10,0) DEFAULT 0 AFTER konx";
@@ -133,6 +133,69 @@ $vysledek = mysql_query("$sql");
 
 $sql = "ALTER TABLE lessons ADD important TEXT NOT NULL AFTER konx";
 $vysledek = mysql_query("$sql");
+
+//ex3
+$sql = "ALTER TABLE lessons ADD exc3_sa1ok DECIMAL(10,0) DEFAULT 0 AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc3_sb1ok DECIMAL(10,0) DEFAULT 0 AFTER konx";
+$vysledek = mysql_query("$sql");
+
+$sql = "ALTER TABLE lessons ADD exc3_sa4x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc3_sa3x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc3_sa2x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc3_sa1x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+
+$sql = "ALTER TABLE lessons ADD exc3_sb4x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc3_sb3x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc3_sb2x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc3_sb1x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+
+$sql = "ALTER TABLE lessons ADD exc3_ta3 VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc3_ta2 VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc3_ta1 VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+
+//ex4
+$sql = "ALTER TABLE lessons ADD exc4_sa1ok DECIMAL(10,0) DEFAULT 0 AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc4_sb1ok DECIMAL(10,0) DEFAULT 0 AFTER konx";
+$vysledek = mysql_query("$sql");
+
+$sql = "ALTER TABLE lessons ADD exc4_sa4x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc4_sa3x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc4_sa2x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc4_sa1x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+
+$sql = "ALTER TABLE lessons ADD exc4_sb4x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc4_sb3x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc4_sb2x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc4_sb1x VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+
+$sql = "ALTER TABLE lessons ADD exc4_ta3 VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc4_ta2 VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons ADD exc4_ta1 VARCHAR(80) NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+
 
 }
 
