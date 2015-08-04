@@ -308,96 +308,32 @@ $uprav="NO";
 <head>
  <meta charset="cp1250">
  <link rel="stylesheet" href="css/global.css">
+ <link rel="stylesheet" href="css/layout_lesson.css">
 <title>Lessons | English2App</title>
 <style type="text/css">
-body {
-  background-color: #eee;
-}
-div.top-bar {
-  overflow: auto;
-  width: 99%;
-  padding: 0 0.5%;
-  clear: both;
+div.search-bar {
+  width: 230px;
+  background-color: #fff;
   height: 32px;
-  background-color: #1976d2;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12); /* prefixy */
-}
-
-dl.breadcrumb-nav > dd {
-  font-size: 16px;
-  float: left;
-  margin-top: 9px;
-  color: #fff;
-}
-dl.breadcrumb-nav > dt > a {
-  display: block;
-  line-height: 16px;
-  font-size: 14px;
-  color: #fff;
-  padding: 8px 7px 8px 7px;
-}
-dl.breadcrumb-nav > dt > a:hover {
-  background-color: #1565C0;
-  color: #fff;
-}
-
-dl.breadcrumb-nav > dt > strong {
-  display: block;
-  color: #fff;
-  padding: 8px 7px 8px 7px;
-  font-size: 14px;
-  line-height: 16px;
-  
-}
-
-
-ul.breadcrumb-nav > li {
-  font-size: 14px;
-  color: #fff;
-}
-ul.breadcrumb-nav > li > a, ul.breadcrumb-nav > li > strong {
-  display: block;
-  padding: 8px 7px 8px 7px;
-  font-size: 14px;
-  color: #fff;
-
-}
-ul.breadcrumb-nav > li > a:hover {
-  background-color: #1565C0;
-  color: #fff;
-}
-
-ul.breadcrumb-nav > li > strong {
-  display: block;
-  color: #fff;
-  font-size: 14px;
-  line-height: 16px;
-}
-
-
-
-
-
-.x16-icon-nav:before {
-  background-image: url(img/x16_white_menu.png);
   margin-right: 8px;
-  width: 16px;
-  height: 16px;
-  display: inline-block; /* dopyt, zosúladiť s ostatnými */
-  content: '';
-  background-repeat: no-repeat;
-  vertical-align: -3px;
 }
-
-
-
-
-div.content {
-  overflow: auto;
-  width: 80%;
-  margin: 24px auto 0 auto;
-  max-width: 1200px;
-  min-width: 950px;
+div.search-bar > input[type=search] {
+  width: 120px;
+  color: #000;
+  height: 14px;
+  padding: 4px 0 2px 3px;
+  border: 0;
+  border-bottom: 1px solid #1976d2;
+  margin: 5px 0 0 15px;
+}
+div.search-bar > a {
+  color: #757575;
+  vertical-align: -1px;
+  margin-left: 7px;
+  display: inline-block;
+}
+div.search-bar > a:hover {
+  text-decoration: underline;
 }
 div.wrap-list-item-bg {
   background-color: #fff;
@@ -410,9 +346,7 @@ div.wrap-list-item-bg > h3 {
   color: #757575;
   line-height: 50px;
   margin-bottom: 10px;
-
 }
-
 table.list-item-bg {
  overflow: auto;
  width: 100%;
@@ -449,72 +383,6 @@ table.list-item-bg tbody td > a:hover {
 
 
 
-
-a.btn-item-new {
-  z-index: 10;
-  position: fixed;
-  right: 24px;
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  border-radius: 50%;
-  box-shadow: 0px 2px 10px rgba(0,0,0,.3),0px 0px 1px rgba(0,0,0,.1),inset 0px 1px 0px rgba(255,255,255,.25),inset 0px -1px 0px rgba(0,0,0,.15); /* prefixy */
-  color: #fff;
-  background-color: #4CAF50;
-  font-size: 28px;
-}
-a.btn-item-new:hover {
-  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15); /* prefixy */
-}
-
-
-a.btn-sort-slim:after {
-  vertical-align: -1px;
-  width: 10px;
-  height: 10px;
-  background-repeat: no-repeat;
-  background-image: url(img/x10_grey400_arrow37down.png);
-  margin-left: 3px;
-  display: inline-block; /* dopyt, zosúladiť s ostatnými */
-  content: '';
-  background-repeat: no-repeat;
-}
-
-
-input[type=text] {
-  height: 16px;
-  line-height: 16px;
-  padding-left: 2px;
-  border: 1px solid #39f;
-  font-size: 13px;
-}
-
-
-div.btn-bar-bottom {
-  overflow: auto;
-  width: 162px;
-  margin: 35px auto 25px auto;
-  background-color:;
-  
-}
-
-div.btn-bar-bottom button {
-  padding: 8px 16px;
-  text-transform: uppercase;
-  font-size: 14px;
-  float: left;
-  margin-left: 15px;
-  letter-spacing: 1px;
-  border-radius: 3px;
-  color:#42A5F5;
-  background-color: #F5F5F5;
-}
-div.btn-bar-bottom button:hover {
-  background-color: #eee;
-}
-
-
 </style>
 <script type="text/javascript">
 //uprava
@@ -538,7 +406,6 @@ div.btn-bar-bottom button:hover {
   {
   }
 
-
   function NovaLekcia()
   {
    window.open('lessons.php?copern=5011&druhzoznamu=<?php echo $druhzoznamu; ?>&drupoh=1&page=1', '_self');
@@ -559,7 +426,7 @@ div.btn-bar-bottom button:hover {
    window.open('lessons.php?copern=1&drupoh=1&page=1&presun=1','_self');
   }
 
-  function Tlac1PDF()
+  function Tlac1PDF() //dopyt, budeme používať?
   {
    window.open('najom_tlac.php?copern=1&page=1', '_blank', 'width=1080, height=900, top=0, left=10, status=yes, resizable=yes, scrollbars=yes');
   }
@@ -657,28 +524,18 @@ $sqlico = mysql_query("SELECT pid,ico,ciszml FROM lessons WHERE pid=$prev_oc ");
 ?>
 <!-- horna lista -->
 <div class="top-bar">
-
-<!--
- <dl class="toleft breadcrumb-nav">
- <dt class="toleft">
-  <a href="#" onclick="();" title="Prejsť na" class="x16-icon-nav">English2App</a>
- </dt>
- <dd>/</dd>
- <dt class="toleft"><strong>Lessons</strong></dt>
-</dl>
--->
-
-<ul class="toleft breadcrumb-nav" style="width:100%;">
+<ul class="toleft breadcrumb-nav">
  <li class="toleft">
-  <a href="#" onclick="();" title="Prejsť na" class="x16-icon-nav">English2App</a>
+  <a href="#" onclick="();" title="Go to" class="x16-icon-nav">English2App</a>
  </li>
  <li class="toleft" style="margin-top:9px;">/</li>
  <li class="toleft">
   <strong>Lessons</strong>
  </li>
- <li class="toright"><strong>Login User</strong></li>
- <li class="toright" style="background-color:#fff; width:1px; height:16px;
-  margin-left:8px; margin-top:8px;">&nbsp;</li>
+ <li class="toright">
+  <div class="toleft divider-ver">&nbsp;</div>
+  <strong class="toleft">Login User</strong>
+ </li>
 <?php
 //echo "cislo_ico ".$cislo_ico;
 //toto je cast na zobrazenie tabulky a prechody medzi stranami
@@ -722,25 +579,32 @@ $sql = mysql_query("SELECT * FROM lessons ORDER BY pid");
 //celkom poloziek
 $cpol = mysql_num_rows($sql);
 ?>
- <li class="toright">
-  <img src="../obr/ikony/printer_blue_icon.png" onclick="Tlac1PDF();"
-   title="Zobraziť zoznam za <?php echo $kli_vume; ?> v PDF"
-   style="width:20px; height:20px; margin-left:10px;">
- </li>
- <li class="toright">
-<FORM name='fnewico' method='post' action='#' style="display:block; height:25px;">
- <div class="search-bar hidden" style="width: 300px; padding: 4px; background-color: #add8e6;">
-  <input type="text" name="h_hladaj" id="h_hladaj" value='<?php echo $h_hladaj; ?>'
-   style="width: 200px; height: 22px; line-height: 22px; border: 1px solid #39f; text-indent: 3px; font-size: 14px;"/>
-  <a href="#" onclick="Hladaj();" style="margin-left:-4px; padding: 5px 10px; background-color: #39f;
-  color: white; font-size: 13px; font-weight: bold;" >Hľadať</a>
-  <img src="../obr/ikony/reload_blue_icon.png" onclick="KonHladaj();" title="Obnoviť"
-   style="width: 20px; height: 20px; cursor: pointer;">
- </div>
-</FORM>
- </li>
+<li class="toright">
 
-</ul>
+<?php if ( $copern != 7 ) { ?>
+  <a href="#" onclick="window.open('lessons.php?copern=7', '_self')"; class="toleft">
+   <img src="img/x18_white_magnifier3.png"
+    title="Search lessons" style="width:18px; height:18px;">
+  </a>
+<?php                     } ?>
+
+<?php
+//hladanie formular
+if ( $copern == 7 OR $copern == 9 )
+{
+?>
+<FORM name='fnewico' method='post' action="lessons.php?page=1&copern=9" class="toleft">
+  <div class="search-bar">
+   <input type="search" name="h_hladaj" id="h_hladaj" value='<?php echo $h_hladaj; ?>'/>
+   <a href="#" onclick="Hladaj();" title="Find">Search</a>
+   <a href="#" onclick="KonHladaj();" title="Obnoviť">X</a>
+  </div>
+</FORM> <!-- dopyt, rozbehať ako v ckli.php = search, ktorý sa neschová po vyhľadaní a po kliknutí na lupu nezmizne zoznam -->
+<?php
+}
+?>
+ </li>
+</ul> <!-- .breadcrumb-nav -->
 </div> <!-- .top-bar -->
 
 <div class="content">
@@ -751,11 +615,8 @@ $cpol = mysql_num_rows($sql);
 ?>
 <a href="#" onclick="NovaLekcia();" title="New lesson" class="btn-item-new"
    style="top:50px;">+</a> <!-- dopyt, nie je funkčné -->
-
 <a href="#" onclick="NovaLekcia();" title="New lesson" class="btn-item-new"
    style="bottom:24px;">+</a> <!-- dopyt, nie je funkčné, dať podmienku aby zobrazilo, ak bude viac ako 20 položiek -->
-
-
 
 <!-- zoznam lekcii -->
 <table class="list-item-bg">
@@ -768,7 +629,7 @@ $cpol = mysql_num_rows($sql);
  <th width="7%" class="left">Type</th>
  <th width="40%" class="left">
   <a href='lessons.php?sys=<?php echo $sys; ?>&copern=1&druhzoznamu=<?php echo $druhzoznamu; ?>&page=<?php echo $page;?>&tried=1'
-   title="" class="btn-sort-slim">Name</a>
+     title="" class="btn-sort-slim">Name</a>
  </th>
  <th width="14%" class="left">
   <a href="" title="" class="btn-sort-slim">Category</a>
