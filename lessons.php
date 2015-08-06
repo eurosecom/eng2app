@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 //tymto sa spusta ponuka z ciselnika sluzieb
 session_start(); 
 $h5rtgh5 = include("tr45efgsf.php");

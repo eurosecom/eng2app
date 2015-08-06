@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 //tymto sa spusta ponuka z ciselnika sluzieb
 session_start(); 
 $h5rtgh5 = include("tr45efgsf.php");
@@ -949,12 +950,12 @@ if ( $copern == 23 ) $clas3="active"; if ( $copern == 24 ) $clas4="active";
 <div class="content-col col-noactive"> <!-- dopyt, prepínaè na "col-active" -->
 <fieldset>
  <label for="name">Názov</label>
- <input type="text" name="name" id="name" class="header" style="width:400px;"/>
+ <input type="text" name="name_sk" id="name_sk" class="header" style="width:400px;"/>
 </fieldset>
 
 <fieldset>
  <label for="type">Typ</label>
- <select size="1" name="type" id="type" onkeydown="faktkedyEnter(event.which);">
+ <select size="1" name="type_sk" id="type_sk" onkeydown="faktkedyEnter(event.which);">
   <option value="0"></option>
   <option value="A">A</option>
   <option value="B">B</option>
@@ -962,7 +963,7 @@ if ( $copern == 23 ) $clas3="active"; if ( $copern == 24 ) $clas4="active";
   <option value="D">D</option>
  </select>
  <label for="ckat">Kategória</label>
- <select size="1" name="ckat" id="ckat" onkeydown="faktkedyEnter(event.which);">
+ <select size="1" name="ckat_sk" id="ckat_sk" onkeydown="faktkedyEnter(event.which);">
   <option value="0"></option>
   <option value="1">Cat 1</option>
   <option value="2">Cat 2</option>
@@ -970,7 +971,7 @@ if ( $copern == 23 ) $clas3="active"; if ( $copern == 24 ) $clas4="active";
   <option value="4">Cat 4</option>
  </select>
  <label for="paid">Cena</label>
- <select size="1" name="paid" id="paid">
+ <select size="1" name="paid_sk" id="paid_sk">
   <option value="0">free</option>
   <option value="1">paid 1</option>
   <option value="2">paid 2</option>
@@ -978,7 +979,7 @@ if ( $copern == 23 ) $clas3="active"; if ( $copern == 24 ) $clas4="active";
  </select>
 <p style="margin-top:12px;">
  <label for="desx" style="margin-bottom:3px;">Popis</label>
- <textarea name="desx" id="desx"><?php echo $desx; ?></textarea>
+ <textarea name="desx_sk" id="desx_sk"><?php echo $desx; ?></textarea>
 </p>
 </fieldset>
 
@@ -1013,52 +1014,52 @@ if ( $copern == 23 ) $clas3="active"; if ( $copern == 24 ) $clas4="active";
 <?php if ( $copern == 1 ) { ?>
 <p>
  <label for="exm1" class="toleft">1</label>
- <textarea name="exm1" id="exm1"><?php echo $exm1; ?></textarea>
+ <textarea name="exm1_sk" id="exm1_sk"><?php echo $exm1; ?></textarea>
 </p>
 <p>
  <label for="exm2" class="toleft">2</label>
- <textarea name="exm2" id="exm2"><?php echo $exm2; ?></textarea>
+ <textarea name="exm2_sk" id="exm2_sk"><?php echo $exm2; ?></textarea>
 </p>
 <p>
  <label for="exm3" class="toleft">3</label>
- <textarea name="exm3" id="exm3"><?php echo $exm3; ?></textarea>
+ <textarea name="exm3_sk" id="exm3_sk"><?php echo $exm3; ?></textarea>
 </p>
 <p>
  <label for="exm4" class="toleft">4</label>
- <textarea name="exm4" id="exm4"><?php echo $exm4; ?></textarea>
+ <textarea name="exm4_sk" id="exm4_sk"><?php echo $exm4; ?></textarea>
 </p>
 <?php                     } ?>
 
 
 <?php if ( $copern == 21 ) { ?>
 <p style="margin-top:0;">
- <input type="text" name="exc1_ta1" id="exc1_ta1" value="<?php echo $exc1_ta1; ?>" style="width:400px;"/>
+ <input type="text" name="exc1_ta1_sk" id="exc1_ta1_sk" value="<?php echo $exc1_ta1; ?>" style="width:400px;"/>
 </p>
 <p>
- <input type="text" name="exc1_sa1x" id="exc1_sa1x" value="<?php echo $exc1_sa1x; ?>" style="width:100px;"/>
+ <input type="text" name="exc1_sa1x_sk" id="exc1_sa1x_sk" value="<?php echo $exc1_sa1x; ?>" style="width:100px;"/>
  <input type="checkbox" name="exc1_sa1ok1" value="1">
- <input type="text" name="exc1_sa2x" id="exc1_sa2x" value="<?php echo $exc1_sa2x; ?>" style="width:100px;"/>
+ <input type="text" name="exc1_sa2x_sk" id="exc1_sa2x_sk" value="<?php echo $exc1_sa2x; ?>" style="width:100px;"/>
  <input type="checkbox" name="exc1_sa1ok2" value="1">
- <input type="text" name="exc1_sa3x" id="exc1_sa3x" value="<?php echo $exc1_sa3x; ?>" style="width:100px;"/>
+ <input type="text" name="exc1_sa3x_sk" id="exc1_sa3x_sk" value="<?php echo $exc1_sa3x; ?>" style="width:100px;"/>
  <input type="checkbox" name="exc1_sa1ok3" value="1">
- <input type="text" name="exc1_sa4x" id="exc1_sa4x" value="<?php echo $exc1_sa4x; ?>" style="width:100px;"/>
+ <input type="text" name="exc1_sa4x_sk" id="exc1_sa4x_sk" value="<?php echo $exc1_sa4x; ?>" style="width:100px;"/>
  <input type="checkbox" name="exc1_sa1ok4" value="1">
 </p>
 <p>
- <input type="text" name="exc1_ta2" id="exc1_ta2" value="<?php echo $exc1_ta2; ?>" style="width:400px;"/>
+ <input type="text" name="exc1_ta2_sk" id="exc1_ta2_sk" value="<?php echo $exc1_ta2; ?>" style="width:400px;"/>
 </p>
 <p>
- <input type="text" name="exc1_sb1x" id="exc1_sb1x" value="<?php echo $exc1_sb1x; ?>" style="width:100px;"/>
+ <input type="text" name="exc1_sb1x_sk" id="exc1_sb1x_sk" value="<?php echo $exc1_sb1x; ?>" style="width:100px;"/>
  <input type="checkbox" name="exc1_sb1ok1" value="1">
- <input type="text" name="exc1_sb2x" id="exc1_sb2x" value="<?php echo $exc1_sb2x; ?>" style="width:100px;"/>
+ <input type="text" name="exc1_sb2x_sk" id="exc1_sb2x_sk" value="<?php echo $exc1_sb2x; ?>" style="width:100px;"/>
  <input type="checkbox" name="exc1_sb1ok2" value="1">
- <input type="text" name="exc1_sb3x" id="exc1_sb3x" value="<?php echo $exc1_sb3x; ?>" style="width:100px;"/>
+ <input type="text" name="exc1_sb3x_sk" id="exc1_sb3x_sk" value="<?php echo $exc1_sb3x; ?>" style="width:100px;"/>
  <input type="checkbox" name="exc1_sb1ok3" value="1">
- <input type="text" name="exc1_sb4x" id="exc1_sb4x" value="<?php echo $exc1_sb4x; ?>" style="width:100px;"/>
+ <input type="text" name="exc1_sb4x_sk" id="exc1_sb4x_sk" value="<?php echo $exc1_sb4x; ?>" style="width:100px;"/>
  <input type="checkbox" name="exc1_sb1ok4" value="1">
 </p>
 <p>
- <input type="text" name="exc1_ta3" id="exc1_ta3" value="<?php echo $exc1_ta3; ?>" style="width:400px;"/>
+ <input type="text" name="exc1_ta3_sk" id="exc1_ta3_sk" value="<?php echo $exc1_ta3; ?>" style="width:400px;"/>
 </p>
 <?php                      } ?>
 
@@ -1162,7 +1163,7 @@ if ( $copern == 23 ) $clas3="active"; if ( $copern == 24 ) $clas4="active";
 <fieldset>
 <p style="margin-top:0px;">
  <label for="important" style="margin-bottom:3px;">Dôležité</label>
- <textarea name="important" id="important"><?php echo $important; ?></textarea>
+ <textarea name="important_sk" id="important_sk"><?php echo $important; ?></textarea>
 </p>
 </fieldset>
 
