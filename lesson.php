@@ -954,64 +954,17 @@ if ( $copern == 23 ) $clas3="active"; if ( $copern == 24 ) $clas4="active";
 </fieldset>
 
 <fieldset>
- <label for="type">Typ</label>
- <select size="1" name="type_sk" id="type_sk" onkeydown="faktkedyEnter(event.which);">
-  <option value="0"></option>
-  <option value="A">A</option>
-  <option value="B">B</option>
-  <option value="C">C</option>
-  <option value="D">D</option>
- </select>
- <label for="ckat">Kategória</label>
- <select size="1" name="ckat_sk" id="ckat_sk" onkeydown="faktkedyEnter(event.which);">
-  <option value="0"></option>
-  <option value="1">Cat 1</option>
-  <option value="2">Cat 2</option>
-  <option value="3">Cat 3</option>
-  <option value="4">Cat 4</option>
- </select>
- <label for="paid">Cena</label>
- <select size="1" name="paid_sk" id="paid_sk">
-  <option value="0">free</option>
-  <option value="1">paid 1</option>
-  <option value="2">paid 2</option>
-  <option value="3">paid 3</option>
- </select>
-<p style="margin-top:12px;">
+<p style="margin-top:30px;">
  <label for="desx" style="margin-bottom:3px;">Popis</label>
  <textarea name="desx_sk" id="desx_sk"><?php echo $desx; ?></textarea>
 </p>
 </fieldset>
 
 <div class="section-nav">
-<?php if ( $copern == 1 ) { ?>
- <a href="#" class="toleft active">Príklady</a>
- <a href="#" onclick="window.open('../eng2app/lesson.php?copern=21&cislo_pid=<?php echo $cislo_pid; ?>', '_self');"
-    class="toleft noactive">Cvièenia</a>
-<?php                     } ?>
-<?php if ( $copern == 2 OR $copern == 21 OR $copern == 22 OR $copern == 23 OR $copern == 24 ) { ?>
- <a href="#" onclick="window.open('../eng2app/lesson.php?copern=1&cislo_pid=<?php echo $cislo_pid; ?>', '_self');"
-   class="toleft noactive">Príklady</a>
- <a href="#" class="toleft active">Cvièenia</a>
-
-<?php
-$clas1="noactive"; $clas2="noactive"; $clas3="noactive"; $clas4="noactive";
-if ( $copern == 21 OR $copern == 2 ) $clas1="active"; if ( $copern == 22 ) $clas2="active";
-if ( $copern == 23 ) $clas3="active"; if ( $copern == 24 ) $clas4="active";
-?>
-  <a href="#" onclick="window.open('../eng2app/lesson.php?copern=24&cislo_pid=<?php echo $cislo_pid; ?>', '_self');"
-     class="toright <?php echo $clas4; ?>">d.</a>
-  <a href="#" onclick="window.open('../eng2app/lesson.php?copern=23&cislo_pid=<?php echo $cislo_pid; ?>', '_self');"
-     class="toright <?php echo $clas3; ?>">c.</a>
-  <a href="#" onclick="window.open('../eng2app/lesson.php?copern=22&cislo_pid=<?php echo $cislo_pid; ?>', '_self');"
-     class="toright <?php echo $clas2; ?>">b.</a>
-  <a href="#" onclick="window.open('../eng2app/lesson.php?copern=21&cislo_pid=<?php echo $cislo_pid; ?>', '_self');"
-     class="toright <?php echo $clas1; ?>">a.</a>
-<?php                     } ?>
+ <a href="#" class="toleft">Príklady</a>
 </div>
 
 <fieldset>
-<?php if ( $copern == 1 ) { ?>
 <p>
  <label for="exm1" class="toleft">1</label>
  <textarea name="exm1_sk" id="exm1_sk"><?php echo $exm1; ?></textarea>
@@ -1028,136 +981,6 @@ if ( $copern == 23 ) $clas3="active"; if ( $copern == 24 ) $clas4="active";
  <label for="exm4" class="toleft">4</label>
  <textarea name="exm4_sk" id="exm4_sk"><?php echo $exm4; ?></textarea>
 </p>
-<?php                     } ?>
-
-
-<?php if ( $copern == 21 ) { ?>
-<p style="margin-top:0;">
- <input type="text" name="exc1_ta1_sk" id="exc1_ta1_sk" value="<?php echo $exc1_ta1; ?>" style="width:400px;"/>
-</p>
-<p>
- <input type="text" name="exc1_sa1x_sk" id="exc1_sa1x_sk" value="<?php echo $exc1_sa1x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc1_sa1ok1" value="1">
- <input type="text" name="exc1_sa2x_sk" id="exc1_sa2x_sk" value="<?php echo $exc1_sa2x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc1_sa1ok2" value="1">
- <input type="text" name="exc1_sa3x_sk" id="exc1_sa3x_sk" value="<?php echo $exc1_sa3x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc1_sa1ok3" value="1">
- <input type="text" name="exc1_sa4x_sk" id="exc1_sa4x_sk" value="<?php echo $exc1_sa4x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc1_sa1ok4" value="1">
-</p>
-<p>
- <input type="text" name="exc1_ta2_sk" id="exc1_ta2_sk" value="<?php echo $exc1_ta2; ?>" style="width:400px;"/>
-</p>
-<p>
- <input type="text" name="exc1_sb1x_sk" id="exc1_sb1x_sk" value="<?php echo $exc1_sb1x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc1_sb1ok1" value="1">
- <input type="text" name="exc1_sb2x_sk" id="exc1_sb2x_sk" value="<?php echo $exc1_sb2x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc1_sb1ok2" value="1">
- <input type="text" name="exc1_sb3x_sk" id="exc1_sb3x_sk" value="<?php echo $exc1_sb3x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc1_sb1ok3" value="1">
- <input type="text" name="exc1_sb4x_sk" id="exc1_sb4x_sk" value="<?php echo $exc1_sb4x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc1_sb1ok4" value="1">
-</p>
-<p>
- <input type="text" name="exc1_ta3_sk" id="exc1_ta3_sk" value="<?php echo $exc1_ta3; ?>" style="width:400px;"/>
-</p>
-<?php                      } ?>
-
-<?php if ( $copern == 22 ) { ?>
-<p style="margin-top:0;">
- <input type="text" name="exc2_ta1" id="exc2_ta1" value="<?php echo $exc2_ta1; ?>" style="width:400px;"/>
-</p>
-<p>
- <input type="text" name="exc2_sa1x" id="exc2_sa1x" value="<?php echo $exc2_sa1x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc2_sa1ok1" value="1">
- <input type="text" name="exc2_sa2x" id="exc2_sa2x" value="<?php echo $exc2_sa2x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc2_sa1ok2" value="1">
- <input type="text" name="exc2_sa3x" id="exc2_sa3x" value="<?php echo $exc2_sa3x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc2_sa1ok3" value="1">
- <input type="text" name="exc2_sa4x" id="exc2_sa4x" value="<?php echo $exc2_sa4x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc2_sa1ok4" value="1">
-</p>
-<p>
- <input type="text" name="exc2_ta2" id="exc2_ta2" value="<?php echo $exc2_ta2; ?>" style="width:400px;"/>
-</p>
-<p>
- <input type="text" name="exc2_sb1x" id="exc2_sb1x" value="<?php echo $exc2_sb1x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc2_sb1ok1" value="1">
- <input type="text" name="exc2_sb2x" id="exc2_sb2x" value="<?php echo $exc2_sb2x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc2_sb1ok2" value="1">
- <input type="text" name="exc2_sb3x" id="exc2_sb3x" value="<?php echo $exc2_sb3x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc2_sb1ok3" value="1">
- <input type="text" name="exc2_sb4x" id="exc2_sb4x" value="<?php echo $exc2_sb4x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc2_sb1ok4" value="1">
-</p>
-<p>
- <input type="text" name="exc2_ta3" id="exc2_ta3" value="<?php echo $exc2_ta3; ?>" style="width:400px;"/>
-</p>
-<?php                      } ?>
-
-<?php if ( $copern == 23 ) { ?>
-<p style="margin-top:0;">
- <input type="text" name="exc3_ta1" id="exc3_ta1" value="<?php echo $exc3_ta1; ?>" style="width:400px;"/>
-</p>
-<p>
- <input type="text" name="exc3_sa1x" id="exc3_sa1x" value="<?php echo $exc3_sa1x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc3_sa1ok1" value="1">
- <input type="text" name="exc3_sa2x" id="exc3_sa2x" value="<?php echo $exc3_sa2x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc3_sa1ok2" value="1">
- <input type="text" name="exc3_sa3x" id="exc3_sa3x" value="<?php echo $exc3_sa3x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc3_sa1ok3" value="1">
- <input type="text" name="exc3_sa4x" id="exc3_sa4x" value="<?php echo $exc3_sa4x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc3_sa1ok4" value="1">
-</p>
-<p>
- <input type="text" name="exc3_ta2" id="exc3_ta2" value="<?php echo $exc3_ta2; ?>" style="width:400px;"/>
-</p>
-<p>
- <input type="text" name="exc3_sb1x" id="exc3_sb1x" value="<?php echo $exc3_sb1x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc3_sb1ok1" value="1">
- <input type="text" name="exc3_sb2x" id="exc3_sb2x" value="<?php echo $exc3_sb2x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc3_sb1ok2" value="1">
- <input type="text" name="exc3_sb3x" id="exc3_sb3x" value="<?php echo $exc3_sb3x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc3_sb1ok3" value="1">
- <input type="text" name="exc3_sb4x" id="exc3_sb4x" value="<?php echo $exc3_sb4x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc3_sb1ok4" value="1">
-</p>
-<p>
- <input type="text" name="exc3_ta3" id="exc3_ta3" value="<?php echo $exc3_ta3; ?>" style="width:400px;"/>
-</p>
-<?php                      } ?>
-
-<?php if ( $copern == 24 ) { ?>
-<p style="margin-top:0;">
- <input type="text" name="exc4_ta1" id="exc4_ta1" value="<?php echo $exc4_ta1; ?>" style="width:400px;"/>
-</p>
-<p>
- <input type="text" name="exc4_sa1x" id="exc4_sa1x" value="<?php echo $exc4_sa1x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc4_sa1ok1" value="1">
- <input type="text" name="exc4_sa2x" id="exc4_sa2x" value="<?php echo $exc4_sa2x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc4_sa1ok2" value="1">
- <input type="text" name="exc4_sa3x" id="exc4_sa3x" value="<?php echo $exc4_sa3x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc4_sa1ok3" value="1">
- <input type="text" name="exc4_sa4x" id="exc4_sa4x" value="<?php echo $exc4_sa4x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc4_sa1ok4" value="1">
-</p>
-<p>
- <input type="text" name="exc4_ta2" id="exc4_ta2" value="<?php echo $exc4_ta2; ?>" style="width:400px;"/>
-</p>
-<p>
- <input type="text" name="exc4_sb1x" id="exc4_sb1x" value="<?php echo $exc4_sb1x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc4_sb1ok1" value="1">
- <input type="text" name="exc4_sb2x" id="exc4_sb2x" value="<?php echo $exc4_sb2x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc4_sb1ok2" value="1">
- <input type="text" name="exc4_sb3x" id="exc4_sb3x" value="<?php echo $exc4_sb3x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc4_sb1ok3" value="1">
- <input type="text" name="exc4_sb4x" id="exc4_sb4x" value="<?php echo $exc4_sb4x; ?>" style="width:100px;"/>
- <input type="checkbox" name="exc4_sb1ok4" value="1">
-</p>
-<p>
- <input type="text" name="exc4_ta3" id="exc4_ta3" value="<?php echo $exc4_ta3; ?>" style="width:400px;"/>
-</p>
-<?php                      } ?>
 </fieldset>
 
 <fieldset>
