@@ -197,8 +197,39 @@ $vysledek = mysql_query("$sql");
 $sql = "ALTER TABLE lessons ADD exc4_ta1 VARCHAR(80) NOT NULL AFTER konx";
 $vysledek = mysql_query("$sql");
 
-
 }
+
+$sql = "SELECT important FROM lessons_sk";
+$vysledok = mysql_query("$sql");
+if ( !$vysledok )
+{
+$sql = "DROP TABLE lessons_sk";
+$vysledok = mysql_query("$sql");
+
+$sqlt = <<<less
+(
+   pid         int not null,
+   name        VARCHAR(80) NOT NULL,
+   desx        TEXT NOT NULL,
+   exm1        TEXT NOT NULL,
+   exm2        TEXT NOT NULL,
+   exm3        TEXT NOT NULL,
+   konx        DECIMAL(10,0) DEFAULT 0
+);
+less;
+$sql = "CREATE TABLE lessons_sk".$sqlt;
+$vysledek = mysql_query("$sql");
+//echo $sql;
+
+$sql = "ALTER TABLE lessons_sk ADD exm5 TEXT NOT NULL AFTER exm3";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons_sk ADD exm4 TEXT NOT NULL AFTER exm3";
+$vysledek = mysql_query("$sql");
+$sql = "ALTER TABLE lessons_sk ADD important TEXT NOT NULL AFTER konx";
+$vysledek = mysql_query("$sql");
+}
+
+
 
 
 //cislo operacie

@@ -20,6 +20,7 @@ require_once("../pswd/password.php");
 //cislo operacie
 $copern = 1*$_REQUEST['copern'];
 if ( $copern == 0 ) $copern = 1;
+$ulozeneok=0;
 
 
 //cislo operacie
@@ -34,6 +35,15 @@ $exm2 = $_REQUEST['exm2'];
 $exm3 = $_REQUEST['exm3'];
 $exm4 = $_REQUEST['exm4'];
 $important = $_REQUEST['important'];
+
+
+$name_sk = $_REQUEST['name_sk'];
+$desx_sk = $_REQUEST['desx_sk'];
+$exm1_sk = $_REQUEST['exm1_sk'];
+$exm2_sk = $_REQUEST['exm2_sk'];
+$exm3_sk = $_REQUEST['exm3_sk'];
+$exm4_sk = $_REQUEST['exm4_sk'];
+$important_sk = $_REQUEST['important_sk'];
 
 //ex1
 $exc1_sa1ok1 = 1*$_REQUEST['exc1_sa1ok1'];
@@ -253,7 +263,28 @@ $uprtxt = "UPDATE lessons SET ".
 //echo $uprtxt;
 $upravene = mysql_query("$uprtxt");
 
+
                     }
+
+
+if( $copernx == 1 ){
+
+$uprtxt = "DELETE FROM lessons_sk WHERE pid='$cislo_pid' ";
+$upravene = mysql_query("$uprtxt");
+
+$uprtxt = "INSERT INTO lessons_sk (pid) VALUES ('$cislo_pid') ";
+$upravene = mysql_query("$uprtxt");
+
+$uprtxt = "UPDATE lessons_sk SET name='$name_sk', desx='$desx_sk', important='$important_sk', ".
+" exm1='$exm1_sk', exm2='$exm2_sk', exm3='$exm3_sk', exm4='$exm4_sk' ".
+" WHERE pid='$cislo_pid'";
+
+//echo $uprtxt;
+$upravene = mysql_query("$uprtxt");
+
+                    }
+
+if($upravene) { $ulozeneok=1; }
 
 $copern=$copernx;
   }
@@ -396,7 +427,24 @@ if( $exc4_sb1ok == 2 ) { $exc4_sb1ok2=1; }
 if( $exc4_sb1ok == 3 ) { $exc4_sb1ok3=1; }
 if( $exc4_sb1ok == 4 ) { $exc4_sb1ok4=1; }
 
+  }
 
+$sqltt = "SELECT * FROM lessons_sk WHERE pid = $cislo_pid ";
+$sql = mysql_query("$sqltt"); 
+  if (@$zaznam=mysql_data_seek($sql,0))
+  {
+  $riadok=mysql_fetch_object($sql);
+
+$type_sk = $riadok->type;
+$name_sk = $riadok->name;
+$ckat_sk = $riadok->ckat;
+$paid_sk = $riadok->paid;
+$desx_sk = $riadok->desx;
+$exm1_sk = $riadok->exm1;
+$exm2_sk = $riadok->exm2;
+$exm3_sk = $riadok->exm3;
+$exm4_sk = $riadok->exm4;
+$important_sk = $riadok->important;
 
 
   }
@@ -950,13 +998,13 @@ if ( $copern == 23 ) $clas3="active"; if ( $copern == 24 ) $clas4="active";
 <div class="content-col col-noactive"> <!-- dopyt, prepínaè na "col-active" -->
 <fieldset>
  <label for="name">Názov</label>
- <input type="text" name="name_sk" id="name_sk" class="header" style="width:400px;"/>
+ <input type="text" name="name_sk" id="name_sk" class="header" value="<?php echo $name_sk; ?>" style="width:400px;"/>
 </fieldset>
 
 <fieldset>
 <p style="margin-top:30px;">
  <label for="desx" style="margin-bottom:3px;">Popis</label>
- <textarea name="desx_sk" id="desx_sk"><?php echo $desx; ?></textarea>
+ <textarea name="desx_sk" id="desx_sk"><?php echo $desx_sk; ?></textarea>
 </p>
 </fieldset>
 
@@ -967,26 +1015,26 @@ if ( $copern == 23 ) $clas3="active"; if ( $copern == 24 ) $clas4="active";
 <fieldset>
 <p>
  <label for="exm1" class="toleft">1</label>
- <textarea name="exm1_sk" id="exm1_sk"><?php echo $exm1; ?></textarea>
+ <textarea name="exm1_sk" id="exm1_sk"><?php echo $exm1_sk; ?></textarea>
 </p>
 <p>
  <label for="exm2" class="toleft">2</label>
- <textarea name="exm2_sk" id="exm2_sk"><?php echo $exm2; ?></textarea>
+ <textarea name="exm2_sk" id="exm2_sk"><?php echo $exm2_sk; ?></textarea>
 </p>
 <p>
  <label for="exm3" class="toleft">3</label>
- <textarea name="exm3_sk" id="exm3_sk"><?php echo $exm3; ?></textarea>
+ <textarea name="exm3_sk" id="exm3_sk"><?php echo $exm3_sk; ?></textarea>
 </p>
 <p>
  <label for="exm4" class="toleft">4</label>
- <textarea name="exm4_sk" id="exm4_sk"><?php echo $exm4; ?></textarea>
+ <textarea name="exm4_sk" id="exm4_sk"><?php echo $exm4_sk; ?></textarea>
 </p>
 </fieldset>
 
 <fieldset>
 <p style="margin-top:0px;">
  <label for="important" style="margin-bottom:3px;">Dôležité</label>
- <textarea name="important_sk" id="important_sk"><?php echo $important; ?></textarea>
+ <textarea name="important_sk" id="important_sk"><?php echo $important_sk; ?></textarea>
 </p>
 </fieldset>
 
