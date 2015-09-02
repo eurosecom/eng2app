@@ -464,14 +464,7 @@ div.wrap-content {
   width: 100%;
 }
 
-.x24-icon-arrow58back {
-  position: absolute;
-  left: 50%;
-  margin-left: -12px;
-  padding: 3px 5px;
-  background-color: blue;
-  display: none;
-}
+
 
 
 div.wrap-content-col {
@@ -569,11 +562,6 @@ select {
 }
 
 
-
-
-
-
-
 div.section-nav {
   overflow: auto;
 }
@@ -604,9 +592,19 @@ fieldset > p > input[type=checkbox] {
   vertical-align: middle;
   margin-right: 15px;
 }
-
-
-
+div.alert-success {
+  font-size:14px;
+  color:#76FF03;
+  padding: 7px;
+  height: 18px;
+  line-height: 18px;
+  width:100px;
+  position:absolute;
+  top:0;
+  left:50%;
+  margin-left:-50px;
+  text-align:center;
+}
 </style>
 <script type="text/javascript">
 //sirka a vyska okna
@@ -733,6 +731,7 @@ if( $exc4_sb1ok4 == 1 ) { echo "document.formv1.exc4_sb1ok4.checked = \"checked\
 </script>
 </head>
 <body onload="ObnovUI();">
+<FORM name="formv1" method="post" action="lesson.php?copern=18&cislo_pid=<?php echo $cislo_pid;?>&copernx=<?php echo $copern;?>">
 
 <!-- horna lista -->
 <div class="top-bar">
@@ -745,18 +744,36 @@ if( $exc4_sb1ok4 == 1 ) { echo "document.formv1.exc4_sb1ok4.checked = \"checked\
   <strong>Lesson <?php echo $cislo_pid;?></strong>
  </li>
  <li class="toright">
+  <a href="#" onclick="();" title="Back" class="toleft">
+   <img src="img/x16_white_arrow20.png" style="width:16px; height:16px;">
+  </a> <!-- dopyt, nie je funkËnÈ -->
+  <button type="submit" title="Save form" class="toleft"
+   style="height:32px; display:block; background-color:#64B5F6;">
+   <img src="img/x16_white_save4.png" style="width:16px; height:16px;">
+  </button>
+  <a href="lessons.php?copern=1" title="No Save" class="toleft">
+   <img src="img/x16_white_xmark16.png" style="width:16px; height:16px;">
+  </a>
   <div class="toleft divider-ver">&nbsp;</div>
-  <strong class="toleft">Login User</strong>
+  <strong class="toleft">Login User</strong> <!-- dopyt, nie je funkËnÈ -->
+
  </li>
 </ul>
+<?php if ( $ulozeneok == 1 ) { ?>
+<div class="alert-success">Saved OK</div> <!-- dopyt, prÌpadne nahradiù symbolom öipky -->
 
-<a href="#" onclick="();" title="Sp‰ù na zoznam" class="x24-icon-arrow58back">sp‰ù</a> <!-- dopyt, dorieöiù -->
+
+<?php } ?>
+
+
 </div> <!-- .top-bar -->
 
 <!-- telo stranky -->
 <div class="wrap-content">
 <div class="content">
-<FORM name="formv1" method="post" action="lesson.php?copern=18&cislo_pid=<?php echo $cislo_pid;?>&copernx=<?php echo $copern;?>">
+
+
+
 
 <div class="wrap-content-col">
 <div class="content-col col-active"> <!-- dopyt, prepÌnaË na "col-active" -->
@@ -984,10 +1001,6 @@ if ( $copern == 23 ) $clas3="active"; if ( $copern == 24 ) $clas4="active";
 
 
 
-<div style="width:100%; background-color:; height:30px;">
- <button type="submit" title="Save form">Save</button>
- <a href="lessons.php?copern=1">NoSave</a>
-</div> <!-- dopyt, bude sa musieù pres˙vaù, ktor˙ stranu robÌm, Ëi 2x urobÌm -->
 
 </div> <!-- .content-col left -->
 </div> <!-- .wrap-content-col left -->

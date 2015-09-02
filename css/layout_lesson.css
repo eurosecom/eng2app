@@ -15,9 +15,9 @@ ul.breadcrumb-nav {
   font-size: 14px;
   color: #fff;
 }
-ul.breadcrumb-nav > li > a, ul.breadcrumb-nav > li > strong {
+ul.breadcrumb-nav > li > a, ul.breadcrumb-nav > li > strong, ul.breadcrumb-nav > li > button {
   display: block;
-  padding: 7px;
+  padding: 7px 10px;
   color: #fff;
   height: 18px;
   line-height: 18px;
@@ -29,7 +29,7 @@ ul.breadcrumb-nav > li > div.divider-ver {
   background-color: #fff;
   width: 1px;
   height: 16px;
-  margin: 8px 2px 0 3px;
+  margin: 8px 3px 0 3px;
 }
 
 div.content {
@@ -43,6 +43,8 @@ div.content {
 
 
 /* BUTTONS */
+
+
 .x16-icon-nav:before, a.btn-sort-slim:after {
   display: inline-block;
   content: '';
@@ -55,6 +57,7 @@ div.content {
   height: 16px;
   vertical-align: -3px;
 }
+
 a.btn-item-new { /* nova lekcia */
   z-index: 10;
   position: fixed;
