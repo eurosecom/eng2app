@@ -622,6 +622,13 @@ var vyskawincel = screen.height;
    document.formv1.ckat.value = '<?php echo "$ckat";?>';
    document.formv1.paid.value = '<?php echo "$paid";?>';
 
+<?php if ( $ulozeneok == 1 ) { ?>
+alert_success.style.display="";
+<?php } ?>
+<?php if ( $ulozeneok != 1 ) { ?>
+alert_success.style.display="none";
+<?php } ?>
+
 <?php
 if ( $copern == 21 )
    {
@@ -720,7 +727,11 @@ if( $exc4_sb1ok4 == 1 ) { echo "document.formv1.exc4_sb1ok4.checked = \"checked\
         document.forms.formv1.taktako.select();
                  }
   }
+  function succesoff()
+  {
+   alert_success.style.display="none";
 
+  }
 
 
 //Z ciarky na bodku
@@ -728,6 +739,9 @@ if( $exc4_sb1ok4 == 1 ) { echo "document.formv1.exc4_sb1ok4.checked = \"checked\
   {
    if ( Vstup.value.search(/[^0-9.-]/g) != -1 ) { Vstup.value=Vstup.value.replace(",","."); }
   }
+
+
+
 </script>
 </head>
 <body onload="ObnovUI();">
@@ -744,7 +758,7 @@ if( $exc4_sb1ok4 == 1 ) { echo "document.formv1.exc4_sb1ok4.checked = \"checked\
   <strong>Lesson <?php echo $cislo_pid;?></strong>
  </li>
  <li class="toright">
-  <a href="#" onclick="();" title="Back" class="toleft">
+  <a href="lessons.php?copern=1" title="Back" class="toleft">
    <img src="img/x16_white_arrow20.png" style="width:16px; height:16px;">
   </a> <!-- dopyt, nie je funkèné -->
   <button type="submit" title="Save form" class="toleft"
@@ -759,11 +773,8 @@ if( $exc4_sb1ok4 == 1 ) { echo "document.formv1.exc4_sb1ok4.checked = \"checked\
 
  </li>
 </ul>
-<?php if ( $ulozeneok == 1 ) { ?>
-<div class="alert-success">Saved OK</div> <!-- dopyt, prípadne nahradi symbolom šipky -->
 
-
-<?php } ?>
+<div id="alert_success" class="alert-success" >Saved OK</div> <!-- dopyt, prípadne nahradi symbolom šipky -->
 
 
 </div> <!-- .top-bar -->
@@ -779,7 +790,7 @@ if( $exc4_sb1ok4 == 1 ) { echo "document.formv1.exc4_sb1ok4.checked = \"checked\
 <div class="content-col col-active"> <!-- dopyt, prepínaè na "col-active" -->
 <fieldset>
  <label for="name">Name</label>
- <input type="text" name="name" id="name" class="header" style="width:400px;"/>
+ <input type="text" name="name" id="name" class="header" style="width:400px;" onclick="succesoff();" />
 </fieldset>
 
 <fieldset>
