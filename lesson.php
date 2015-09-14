@@ -191,8 +191,11 @@ if ( $copern == 18 )
 $cislo_pid = strip_tags($_REQUEST['cislo_pid']);
 $copernx = 1*$_REQUEST['copernx'];
 
+$uprtxt = "INSERT INTO lessons_zal SELECT * FROM  lessons WHERE pid='$cislo_pid' ";
+$upravene = mysql_query("$uprtxt");
+
 $uprtxt = "UPDATE lessons SET ".
-" type='$type', ckat='$ckat', paid='$paid', name='$name', desx='$desx', important='$important' ".
+" type='$type', ckat='$ckat', paid='$paid', name='$name', desx='$desx', important='$important', datm=now() ".
 " WHERE pid='$cislo_pid'";
 
 //echo $uprtxt;
@@ -269,6 +272,9 @@ $upravene = mysql_query("$uprtxt");
 
 if( $copernx == 1 ){
 
+$uprtxt = "INSERT INTO lessons_sk_zal SELECT * FROM  lessons_sk WHERE pid='$cislo_pid' ";
+$upravene = mysql_query("$uprtxt");
+
 $uprtxt = "DELETE FROM lessons_sk WHERE pid='$cislo_pid' ";
 $upravene = mysql_query("$uprtxt");
 
@@ -276,7 +282,7 @@ $uprtxt = "INSERT INTO lessons_sk (pid) VALUES ('$cislo_pid') ";
 $upravene = mysql_query("$uprtxt");
 
 $uprtxt = "UPDATE lessons_sk SET name='$name_sk', desx='$desx_sk', important='$important_sk', ".
-" exm1='$exm1_sk', exm2='$exm2_sk', exm3='$exm3_sk', exm4='$exm4_sk' ".
+" exm1='$exm1_sk', exm2='$exm2_sk', exm3='$exm3_sk', exm4='$exm4_sk', datm=now() ".
 " WHERE pid='$cislo_pid'";
 
 //echo $uprtxt;

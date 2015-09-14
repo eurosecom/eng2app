@@ -230,7 +230,48 @@ $vysledek = mysql_query("$sql");
 }
 
 
+$sql = "SELECT datm FROM lessons";
+$vysledok = mysql_query("$sql");
+if ( !$vysledok )
+{
 
+$sql = "ALTER TABLE lessons ADD datm TIMESTAMP(14) ON UPDATE CURRENT_TIMESTAMP DEFAULT CURRENT_TIMESTAMP AFTER konx";
+$vysledek = mysql_query("$sql");
+
+}
+$sql = "SELECT datm FROM lessons_sk";
+$vysledok = mysql_query("$sql");
+if ( !$vysledok )
+{
+
+$sql = "ALTER TABLE lessons_sk ADD datm TIMESTAMP(14) ON UPDATE CURRENT_TIMESTAMP DEFAULT CURRENT_TIMESTAMP AFTER konx";
+$vysledek = mysql_query("$sql");
+
+}
+
+$sql = "SELECT datm FROM lessons_zal";
+$vysledok = mysql_query("$sql");
+if ( !$vysledok )
+{
+$sql = "CREATE TABLE lessons_zal SELECT * FROM lessons ";
+$vysledek = mysql_query("$sql");
+
+$sql = "ALTER TABLE lessons_sk_zal ADD datm TIMESTAMP(14) ON UPDATE CURRENT_TIMESTAMP DEFAULT CURRENT_TIMESTAMP AFTER konx";
+$vysledek = mysql_query("$sql");
+
+}
+$sql = "SELECT datm FROM lessons_sk_zal";
+$vysledok = mysql_query("$sql");
+if ( !$vysledok )
+{
+$sql = "CREATE TABLE lessons_sk_zal SELECT * FROM lessons_sk ";
+$vysledek = mysql_query("$sql");
+
+
+$sql = "ALTER TABLE lessons_sk_zal ADD datm TIMESTAMP(14) ON UPDATE CURRENT_TIMESTAMP DEFAULT CURRENT_TIMESTAMP AFTER konx";
+$vysledek = mysql_query("$sql");
+
+}
 
 //cislo operacie
 $cislo_pid = 1*$_REQUEST['cislo_pid'];
