@@ -22,6 +22,8 @@ $copern = 1*$_REQUEST['copern'];
 if ( $copern == 0 ) $copern = 1;
 $ulozeneok=0;
 
+//parametre uzivatela
+$prmuziv = include("prmuziv.php");
 
 //cislo operacie
 $cislo_pid = 1*$_REQUEST['cislo_pid'];
@@ -630,6 +632,13 @@ var vyskawincel = screen.height;
    document.formv1.ckat.value = '<?php echo "$ckat";?>';
    document.formv1.paid.value = '<?php echo "$paid";?>';
 
+<?php if ( $vyb_colx == 2 ) { ?>
+ColsUkaz();
+<?php } ?>
+<?php if ( $vyb_colx != 2 ) { ?>
+RightColZhasni();
+<?php } ?>
+
 <?php if ( $ulozeneok == 1 ) { ?>
 alert_success.style.display="";
 <?php } ?>
@@ -764,6 +773,7 @@ if( $exc4_sb1ok4 == 1 ) { echo "document.formv1.exc4_sb1ok4.checked = \"checked\
 
 
 </script>
+<script type="text/javascript" src="prmuzivset.js"></script>
 </head>
 <body onload="ObnovUI();">
 <FORM name="formv1" method="post" action="lesson.php?copern=18&cislo_pid=<?php echo $cislo_pid;?>&copernx=<?php echo $copern;?>">
@@ -791,11 +801,11 @@ if( $exc4_sb1ok4 == 1 ) { echo "document.formv1.exc4_sb1ok4.checked = \"checked\
   </a>
   <div class="toleft divider-ver">&nbsp;</div>
 
-<a href="#" onclick="RightColZhasni();" title="Only left col" class="toleft"
+<a href="#" onclick="volajUzivSet(<?php echo $vyb_uziv;?>, 1, 1); RightColZhasni();" title="Only left col" class="toleft"
    style="padding:7px 7px; margin-left:5px;">
  <img src="img/x16_white_stop.png" style="width:16px; height:16px;">
 </a>
-<a href="#" onclick="ColsUkaz();" title="Display cols" class="toleft"
+<a href="#" onclick="volajUzivSet(<?php echo $vyb_uziv;?>, 1, 2); ColsUkaz();" title="Display cols" class="toleft"
    style="padding:7px 7px; margin-right:5px;">
  <img src="img/x16_white_pause.png" style="width:16px; height:16px;">
 </a>

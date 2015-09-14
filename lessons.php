@@ -1,8 +1,9 @@
 <?php
-error_reporting(0);
+//error_reporting(0);
 //tymto sa spusta ponuka z ciselnika sluzieb
 session_start(); 
 $h5rtgh5 = include("tr45efgsf.php");
+$_SESSION['kli_uziv'] = 21;
 ?>
 <!doctype html>
 <html>
@@ -20,6 +21,11 @@ require_once("../pswd/password.php");
     exit;
   endif;
   mysql_select_db($mysqldb);
+
+
+//parametre uzivatela
+$prmuziv = include("prmuziv.php");
+//echo $vyb_colx;
 
 $druhzoznamu = 1*$_REQUEST['druhzoznamu'];
 $hladanie = 1*$_REQUEST['hladanie'];
