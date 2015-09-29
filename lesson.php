@@ -918,7 +918,7 @@ if ( $copern == 23 ) $clas3="active"; if ( $copern == 24 ) $clas4="active";
  <input type="text" name="exc1_ta1" id="exc1_ta1" value="<?php echo $exc1_ta1; ?>" style="width:90%; min-width:400px;"/>
 </p>
 <p>
- <input type="text" name="exc1_sa1x" id="exc1_sa1x" value="<?php echo $exc1_sa1x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="text" name="exc1_sa1x" id="exc1_sa1x" value="<?php echo $exc1_sa1x; ?>" style="width:20%; min-width:100px; margin-bottom:10px;"/>
  <input type="checkbox" name="exc1_sa1ok1" value="1">
  <input type="text" name="exc1_sa2x" id="exc1_sa2x" value="<?php echo $exc1_sa2x; ?>" style="width:20%; min-width:100px;"/>
  <input type="checkbox" name="exc1_sa1ok2" value="1">
@@ -926,12 +926,24 @@ if ( $copern == 23 ) $clas3="active"; if ( $copern == 24 ) $clas4="active";
  <input type="checkbox" name="exc1_sa1ok3" value="1">
  <input type="text" name="exc1_sa4x" id="exc1_sa4x" value="<?php echo $exc1_sa4x; ?>" style="width:20%; min-width:100px;"/>
  <input type="checkbox" name="exc1_sa1ok4" value="1">
+ <input type="text" name="exc1_sa5x" id="exc1_sa5x" value="<?php echo $exc1_sa5x; ?>" style="width:20%; min-width:100px; margin-bottom:10px;"/>
+ <input type="checkbox" name="exc1_sa1ok5" value="1">
+ <input type="text" name="exc1_sa6x" id="exc1_sa6x" value="<?php echo $exc1_sa6x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc1_sa1ok6" value="1">
+ <input type="text" name="exc1_sa7x" id="exc1_sa7x" value="<?php echo $exc1_sa7x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc1_sa1ok7" value="1">
+ <input type="text" name="exc1_sa8x" id="exc1_sa8x" value="<?php echo $exc1_sa8x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc1_sa1ok8" value="1">
+ <input type="text" name="exc1_sa9x" id="exc1_sa9x" value="<?php echo $exc1_sa9x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc1_sa1ok9" value="1">
+ <input type="text" name="exc1_sa10x" id="exc1_sa10x" value="<?php echo $exc1_sa10x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc1_sa1ok10" value="1">
 </p>
 <p>
  <input type="text" name="exc1_ta2" id="exc1_ta2" value="<?php echo $exc1_ta2; ?>" style="width:90%; min-width:400px;"/>
 </p>
 <p>
- <input type="text" name="exc1_sb1x" id="exc1_sb1x" value="<?php echo $exc1_sb1x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="text" name="exc1_sb1x" id="exc1_sb1x" value="<?php echo $exc1_sb1x; ?>" style="width:20%; min-width:100px; margin-bottom:10px;"/>
  <input type="checkbox" name="exc1_sb1ok1" value="1">
  <input type="text" name="exc1_sb2x" id="exc1_sb2x" value="<?php echo $exc1_sb2x; ?>" style="width:20%; min-width:100px;"/>
  <input type="checkbox" name="exc1_sb1ok2" value="1">
@@ -939,6 +951,18 @@ if ( $copern == 23 ) $clas3="active"; if ( $copern == 24 ) $clas4="active";
  <input type="checkbox" name="exc1_sb1ok3" value="1">
  <input type="text" name="exc1_sb4x" id="exc1_sb4x" value="<?php echo $exc1_sb4x; ?>" style="width:20%; min-width:100px;"/>
  <input type="checkbox" name="exc1_sb1ok4" value="1">
+ <input type="text" name="exc1_sa5x" id="exc1_sb5x" value="<?php echo $exc1_sb5x; ?>" style="width:20%; min-width:100px; margin-bottom:10px;"/>
+ <input type="checkbox" name="exc1_sb1ok5" value="1">
+ <input type="text" name="exc1_sa6x" id="exc1_sb6x" value="<?php echo $exc1_sb6x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc1_sb1ok6" value="1">
+ <input type="text" name="exc1_sa7x" id="exc1_sb7x" value="<?php echo $exc1_sb7x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc1_sb1ok7" value="1">
+ <input type="text" name="exc1_sa8x" id="exc1_sb8x" value="<?php echo $exc1_sb8x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc1_sb1ok8" value="1">
+ <input type="text" name="exc1_sa9x" id="exc1_sb9x" value="<?php echo $exc1_sb9x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc1_sb1ok9" value="1">
+ <input type="text" name="exc1_sb10x" id="exc1_sb10x" value="<?php echo $exc1_sb10x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc1_sb1ok10" value="1">
 </p>
 <p>
  <input type="text" name="exc1_ta3" id="exc1_ta3" value="<?php echo $exc1_ta3; ?>" style="width:90%; min-width:400px;"/>
@@ -950,7 +974,7 @@ if ( $copern == 23 ) $clas3="active"; if ( $copern == 24 ) $clas4="active";
  <input type="text" name="exc2_ta1" id="exc2_ta1" value="<?php echo $exc2_ta1; ?>" style="width:90%; min-width:400px;"/>
 </p>
 <p>
- <input type="text" name="exc2_sa1x" id="exc2_sa1x" value="<?php echo $exc2_sa1x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="text" name="exc2_sa1x" id="exc2_sa1x" value="<?php echo $exc2_sa1x; ?>" style="width:20%; min-width:100px; margin-bottom:10px;"/>
  <input type="checkbox" name="exc2_sa1ok1" value="1">
  <input type="text" name="exc2_sa2x" id="exc2_sa2x" value="<?php echo $exc2_sa2x; ?>" style="width:20%; min-width:100px;"/>
  <input type="checkbox" name="exc2_sa1ok2" value="1">
@@ -958,12 +982,24 @@ if ( $copern == 23 ) $clas3="active"; if ( $copern == 24 ) $clas4="active";
  <input type="checkbox" name="exc2_sa1ok3" value="1">
  <input type="text" name="exc2_sa4x" id="exc2_sa4x" value="<?php echo $exc2_sa4x; ?>" style="width:20%; min-width:100px;"/>
  <input type="checkbox" name="exc2_sa1ok4" value="1">
+ <input type="text" name="exc2_sa5x" id="exc2_sa5x" value="<?php echo $exc2_sa5x; ?>" style="width:20%; min-width:100px; margin-bottom:10px;"/>
+ <input type="checkbox" name="exc1_sa1ok5" value="1">
+ <input type="text" name="exc2_sa6x" id="exc2_sa6x" value="<?php echo $exc2_sa6x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc1_sa1ok6" value="1">
+ <input type="text" name="exc2_sa7x" id="exc2_sa7x" value="<?php echo $exc2_sa7x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc1_sa1ok7" value="1">
+ <input type="text" name="exc2_sa8x" id="exc2_sa8x" value="<?php echo $exc2_sa8x; ?>" style="width:20%; min-width:100px; margin-bottom:10px;"/>
+ <input type="checkbox" name="exc1_sa1ok8" value="1">
+ <input type="text" name="exc2_sa9x" id="exc2_sa9x" value="<?php echo $exc2_sa9x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc1_sa1ok9" value="1">
+ <input type="text" name="exc2_sa10x" id="exc2_sa10x" value="<?php echo $exc2_sa10x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc2_sa1ok10" value="1">
 </p>
 <p>
  <input type="text" name="exc2_ta2" id="exc2_ta2" value="<?php echo $exc2_ta2; ?>" style="width:90%; min-width:400px;"/>
 </p>
 <p>
- <input type="text" name="exc2_sb1x" id="exc2_sb1x" value="<?php echo $exc2_sb1x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="text" name="exc2_sb1x" id="exc2_sb1x" value="<?php echo $exc2_sb1x; ?>" style="width:20%; min-width:100px; margin-bottom:10px;"/>
  <input type="checkbox" name="exc2_sb1ok1" value="1">
  <input type="text" name="exc2_sb2x" id="exc2_sb2x" value="<?php echo $exc2_sb2x; ?>" style="width:20%; min-width:100px;"/>
  <input type="checkbox" name="exc2_sb1ok2" value="1">
@@ -971,6 +1007,18 @@ if ( $copern == 23 ) $clas3="active"; if ( $copern == 24 ) $clas4="active";
  <input type="checkbox" name="exc2_sb1ok3" value="1">
  <input type="text" name="exc2_sb4x" id="exc2_sb4x" value="<?php echo $exc2_sb4x; ?>" style="width:20%; min-width:100px;"/>
  <input type="checkbox" name="exc2_sb1ok4" value="1">
+ <input type="text" name="exc2_sb5x" id="exc2_sb5x" value="<?php echo $exc2_sb5x; ?>" style="width:20%; min-width:100px; margin-bottom:10px;"/>
+ <input type="checkbox" name="exc2_sa1ok5" value="1">
+ <input type="text" name="exc2_sb6x" id="exc2_sb6x" value="<?php echo $exc2_sb6x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc2_sa1ok6" value="1">
+ <input type="text" name="exc2_sb7x" id="exc2_sb7x" value="<?php echo $exc2_sb7x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc2_sa1ok7" value="1">
+ <input type="text" name="exc2_sb8x" id="exc2_sb8x" value="<?php echo $exc2_sb8x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc2_sa1ok8" value="1">
+ <input type="text" name="exc2_sb9x" id="exc2_sb9x" value="<?php echo $exc2_sb9x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc2_sa1ok9" value="1">
+ <input type="text" name="exc2_sb10x" id="exc2_sb10x" value="<?php echo $exc2_sb10x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc2_sb1ok10" value="1">
 </p>
 <p>
  <input type="text" name="exc2_ta3" id="exc2_ta3" value="<?php echo $exc2_ta3; ?>" style="width:90%; min-width:400px;"/>
@@ -982,7 +1030,7 @@ if ( $copern == 23 ) $clas3="active"; if ( $copern == 24 ) $clas4="active";
  <input type="text" name="exc3_ta1" id="exc3_ta1" value="<?php echo $exc3_ta1; ?>" style="width:90%; min-width:400px;"/>
 </p>
 <p>
- <input type="text" name="exc3_sa1x" id="exc3_sa1x" value="<?php echo $exc3_sa1x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="text" name="exc3_sa1x" id="exc3_sa1x" value="<?php echo $exc3_sa1x; ?>" style="width:20%; min-width:100px; margin-bottom:10px;"/>
  <input type="checkbox" name="exc3_sa1ok1" value="1">
  <input type="text" name="exc3_sa2x" id="exc3_sa2x" value="<?php echo $exc3_sa2x; ?>" style="width:20%; min-width:100px;"/>
  <input type="checkbox" name="exc3_sa1ok2" value="1">
@@ -990,12 +1038,24 @@ if ( $copern == 23 ) $clas3="active"; if ( $copern == 24 ) $clas4="active";
  <input type="checkbox" name="exc3_sa1ok3" value="1">
  <input type="text" name="exc3_sa4x" id="exc3_sa4x" value="<?php echo $exc3_sa4x; ?>" style="width:20%; min-width:100px;"/>
  <input type="checkbox" name="exc3_sa1ok4" value="1">
+ <input type="text" name="exc3_sa5x" id="exc3_sa5x" value="<?php echo $exc3_sa5x; ?>" style="width:20%; min-width:100px; margin-bottom:10px;"/>
+ <input type="checkbox" name="exc3_sa1ok5" value="1">
+ <input type="text" name="exc3_sa6x" id="exc3_sa6x" value="<?php echo $exc3_sa6x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc3_sa1ok6" value="1">
+ <input type="text" name="exc3_sa7x" id="exc3_sa7x" value="<?php echo $exc3_sa7x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc3_sa1ok7" value="1">
+ <input type="text" name="exc3_sa8x" id="exc3_sa8x" value="<?php echo $exc3_sa8x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc3_sa1ok8" value="1">
+ <input type="text" name="exc3_sa9x" id="exc3_sa9x" value="<?php echo $exc3_sa9x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc3_sa1ok9" value="1">
+ <input type="text" name="exc3_sa10x" id="exc3_sa10x" value="<?php echo $exc3_sa10x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc3_sa1ok10" value="1">
 </p>
 <p>
  <input type="text" name="exc3_ta2" id="exc3_ta2" value="<?php echo $exc3_ta2; ?>" style="width:90%; min-width:400px;"/>
 </p>
 <p>
- <input type="text" name="exc3_sb1x" id="exc3_sb1x" value="<?php echo $exc3_sb1x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="text" name="exc3_sb1x" id="exc3_sb1x" value="<?php echo $exc3_sb1x; ?>" style="width:20%; min-width:100px; margin-bottom:10px;"/>
  <input type="checkbox" name="exc3_sb1ok1" value="1">
  <input type="text" name="exc3_sb2x" id="exc3_sb2x" value="<?php echo $exc3_sb2x; ?>" style="width:20%; min-width:100px;"/>
  <input type="checkbox" name="exc3_sb1ok2" value="1">
@@ -1003,6 +1063,18 @@ if ( $copern == 23 ) $clas3="active"; if ( $copern == 24 ) $clas4="active";
  <input type="checkbox" name="exc3_sb1ok3" value="1">
  <input type="text" name="exc3_sb4x" id="exc3_sb4x" value="<?php echo $exc3_sb4x; ?>" style="width:20%; min-width:100px;"/>
  <input type="checkbox" name="exc3_sb1ok4" value="1">
+ <input type="text" name="exc3_sb5x" id="exc3_sb5x" value="<?php echo $exc3_sb5x; ?>" style="width:20%; min-width:100px; margin-bottom:10px;"/>
+ <input type="checkbox" name="exc1_sb1ok5" value="1">
+ <input type="text" name="exc3_sb6x" id="exc3_sb6x" value="<?php echo $exc3_sb6x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc1_sb1ok6" value="1">
+ <input type="text" name="exc3_sb7x" id="exc3_sb7x" value="<?php echo $exc3_sb7x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc1_sb1ok7" value="1">
+ <input type="text" name="exc3_sb8x" id="exc3_sb8x" value="<?php echo $exc3_sb8x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc3_sb1ok8" value="1">
+ <input type="text" name="exc3_sb9x" id="exc3_sb9x" value="<?php echo $exc3_sb9x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc3_sb1ok9" value="1">
+ <input type="text" name="exc3_sb10x" id="exc3_sb10x" value="<?php echo $exc3_sb10x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc3_sb1ok10" value="1">
 </p>
 <p>
  <input type="text" name="exc3_ta3" id="exc3_ta3" value="<?php echo $exc3_ta3; ?>" style="width:90%; min-width:400px;"/>
@@ -1014,7 +1086,7 @@ if ( $copern == 23 ) $clas3="active"; if ( $copern == 24 ) $clas4="active";
  <input type="text" name="exc4_ta1" id="exc4_ta1" value="<?php echo $exc4_ta1; ?>" style="width:90%; min-width:400px;"/>
 </p>
 <p>
- <input type="text" name="exc4_sa1x" id="exc4_sa1x" value="<?php echo $exc4_sa1x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="text" name="exc4_sa1x" id="exc4_sa1x" value="<?php echo $exc4_sa1x; ?>" style="width:20%; min-width:100px; margin-bottom:10px"/>
  <input type="checkbox" name="exc4_sa1ok1" value="1">
  <input type="text" name="exc4_sa2x" id="exc4_sa2x" value="<?php echo $exc4_sa2x; ?>" style="width:20%; min-width:100px;"/>
  <input type="checkbox" name="exc4_sa1ok2" value="1">
@@ -1022,12 +1094,26 @@ if ( $copern == 23 ) $clas3="active"; if ( $copern == 24 ) $clas4="active";
  <input type="checkbox" name="exc4_sa1ok3" value="1">
  <input type="text" name="exc4_sa4x" id="exc4_sa4x" value="<?php echo $exc4_sa4x; ?>" style="width:20%; min-width:100px;"/>
  <input type="checkbox" name="exc4_sa1ok4" value="1">
+ <input type="text" name="exc4_sa5x" id="exc4_sa5x" value="<?php echo $exc4_sa5x; ?>" style="width:20%; min-width:100px; margin-bottom:10px;"/>
+ <input type="checkbox" name="exc4_sa1ok5" value="1">
+ <input type="text" name="exc4_sa6x" id="exc4_sa6x" value="<?php echo $exc4_sa6x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc4_sa1ok6" value="1">
+ <input type="text" name="exc4_sa7x" id="exc4_sa7x" value="<?php echo $exc4_sa7x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc4_sa1ok7" value="1">
+ <input type="text" name="exc4_sa8x" id="exc4_sa8x" value="<?php echo $exc4_sa8x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc4_sa1ok8" value="1">
+ <input type="text" name="exc4_sa9x" id="exc4_sa9x" value="<?php echo $exc4_sa9x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc4_sa1ok9" value="1">
+ <input type="text" name="exc4_sa10x" id="exc4_sa10x" value="<?php echo $exc4_sa10x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc4_sa1ok10" value="1">
+
+
 </p>
 <p>
  <input type="text" name="exc4_ta2" id="exc4_ta2" value="<?php echo $exc4_ta2; ?>" style="width:90%; min-width:400px;"/>
 </p>
 <p>
- <input type="text" name="exc4_sb1x" id="exc4_sb1x" value="<?php echo $exc4_sb1x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="text" name="exc4_sb1x" id="exc4_sb1x" value="<?php echo $exc4_sb1x; ?>" style="width:20%; min-width:100px; margin-bottom:10px;"/>
  <input type="checkbox" name="exc4_sb1ok1" value="1">
  <input type="text" name="exc4_sb2x" id="exc4_sb2x" value="<?php echo $exc4_sb2x; ?>" style="width:20%; min-width:100px;"/>
  <input type="checkbox" name="exc4_sb1ok2" value="1">
@@ -1035,6 +1121,18 @@ if ( $copern == 23 ) $clas3="active"; if ( $copern == 24 ) $clas4="active";
  <input type="checkbox" name="exc4_sb1ok3" value="1">
  <input type="text" name="exc4_sb4x" id="exc4_sb4x" value="<?php echo $exc4_sb4x; ?>" style="width:20%; min-width:100px;"/>
  <input type="checkbox" name="exc4_sb1ok4" value="1">
+ <input type="text" name="exc4_sb5x" id="exc4_sb5x" value="<?php echo $exc4_sb5x; ?>" style="width:20%; min-width:100px; margin-bottom:10px;"/>
+ <input type="checkbox" name="exc4_sb1ok5" value="1">
+ <input type="text" name="exc4_sb6x" id="exc4_sb6x" value="<?php echo $exc4_sb6x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc4_sb1ok6" value="1">
+ <input type="text" name="exc4_sb7x" id="exc4_sb7x" value="<?php echo $exc4_sb7x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc4_sb1ok7" value="1">
+ <input type="text" name="exc4_sb8x" id="exc4_sb8x" value="<?php echo $exc4_sb8x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc4_sb1ok8" value="1">
+ <input type="text" name="exc4_sb9x" id="exc4_sb9x" value="<?php echo $exc4_sb9x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc4_sb1ok9" value="1">
+ <input type="text" name="exc4_sb10x" id="exc4_sb10x" value="<?php echo $exc4_sb10x; ?>" style="width:20%; min-width:100px;"/>
+ <input type="checkbox" name="exc4_sb1ok10" value="1">
 </p>
 <p>
  <input type="text" name="exc4_ta3" id="exc4_ta3" value="<?php echo $exc4_ta3; ?>" style="width:90%; min-width:400px;"/>

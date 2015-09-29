@@ -613,7 +613,54 @@ $sqlico = mysql_query("SELECT pid,ico,ciszml FROM lessons WHERE pid=$prev_oc ");
  </li>
  <li class="toright">
   <div class="toleft divider-ver">&nbsp;</div>
-  <strong class="toleft">Login User</strong>
+  <a href="#" onclick="document.getElementById('loginbox').className='unhidden';" class="toleft">
+   <strong>Login</strong> <!-- výpis prihláseného užívate¾a, ak nebude ak Login -->
+  </a>
+
+<form action="" >
+<div id="loginbox" class="hidden" style="position:absolute; width:200px; height:110px; top:0px; right:1%; z-index:100; background-color:grey;
+  background-color: #1976d2;
+  box-shadow: 0 5px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  padding:15px 15px 12px 15px;">
+
+
+
+<a href="#" onclick="document.getElementById('loginbox').className='hidden';"
+
+ title="Cancel" style="position:absolute; top:10px; right:10px;">
+<img src="img/x16_white_xmark4.png" style="width:16px; height:16px;">
+</a> <!-- dopyt, :hover bude cez opacity -->
+
+<h1 style="height:30px; font-size:16px; width:100%;">Login</h1>
+
+<p style="margin-bottom:8px;">
+<label for="" style="width:70px; display:block; float:left; background-color:;
+line-height:22px; font-size:12px;">Username</label>
+<input type="text" style="font-size:14px; width:100px;
+border:0; height:12px; padding:5px 5px;  color:black; border-radius:1px;">
+</p>
+<p style="background-color:; margin-bottom:8px;">
+<label for="" style="width:70px; display:block; float:left; background-color:;
+line-height:22px; font-size:12px;">Password</label>
+<input type="password" style="font-size:14px; width:100px;
+border:0; height:12px; padding:5px 5px;  color:black; border-radius:1px;">
+</p>
+
+
+
+<button type="submit" title="Login user"
+ style="background-color:#4CAF50; height:24px; width:100%; border-radius:1px;">
+<img src="img/x16_white_checkmark.png"
+style="display:block; width:16px; height:16px; margin:auto;">
+
+
+ 
+</button> <!-- dopyt, :hover bude cez opacity -->
+
+
+</div>
+</form>
+
  </li>
 <?php
 //echo "cislo_ico ".$cislo_ico;
